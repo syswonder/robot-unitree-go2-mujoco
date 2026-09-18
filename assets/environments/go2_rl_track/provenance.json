@@ -1,0 +1,14 @@
+{
+  "repository": "wty-yy/go2_rl_gym",
+  "revision": "30e74dc507bec7a642a8c98be26081f2c6f0822d",
+  "path": "resources/robots/go2/race_track.xml",
+  "sha256": "b5f5d9995429f71e38b7b37e98588c7ac8eb035a87ea1a62931fa91d0e5cc79c",
+  "url": "https://raw.githubusercontent.com/wty-yy/go2_rl_gym/30e74dc507bec7a642a8c98be26081f2c6f0822d/resources/robots/go2/race_track.xml",
+  "license": "MIT; upstream notice also retains Unitree BSD-3-Clause",
+  "upstreamGeomCount": 236,
+  "converter": "scripts/download-scenes.py",
+  "modifications": [
+    "Remove robot include",
+    "Split visuals group 1 and static colliders group 3; preserve geometry and contact parameters"
+  ]
+}

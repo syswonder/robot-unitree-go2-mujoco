@@ -1,0 +1,8 @@
+.env
+.env.*
+.git
+.runtime
+rbnx-boot
+node_modules
+third_party
+__pycache__

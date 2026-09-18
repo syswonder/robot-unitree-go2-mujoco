@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "go2_rl_track",
+  "position": [
+    -0.5,
+    0.0
+  ],
+  "yaw": 0,
+  "robotRadiusMeters": 0.5,
+  "clearanceMeters": 0.98,
+  "method": "upstream-start-plane-static-aabb-clearance"
+}

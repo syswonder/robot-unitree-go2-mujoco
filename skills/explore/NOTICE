@@ -1,0 +1,17 @@
+Go2 deployment-owned Explore adaptation
+
+Based on syswonder/skill-explore-rbnx:
+https://github.com/syswonder/skill-explore-rbnx
+Upstream commit: 40bdfa8d143e5e7c28909992c63682111d8371dc
+Copied: 2026-09-08
+Upstream maintainer: wheatfox <wheatfox17@icloud.com>
+License: MulanPSL-2.0, as declared by upstream source SPDX headers,
+README.md and package_manifest.yaml. Original declarations are retained.
+The upstream commit does not contain a standalone license-text file.
+
+Local modifications implement connected known-free footprint-clearance
+approaches, temporary failed-goal suppression, deployment configuration,
+worker-owned navigation cancellation with terminal confirmation, conditional
+navigation speed caps, graceful shutdown, isolated Docker defaults and tests.
+The explore identity and capability TOML/IDL files remain unchanged.
+See UPSTREAM.md and README.md for provenance and implementation details.

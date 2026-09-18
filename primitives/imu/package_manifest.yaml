@@ -1,0 +1,15 @@
+manifestVersion: 1
+package:
+  name: com.robonix.sim.mid360_imu
+  version: 0.2.0
+  description: Simulated Go2 body IMU in imu_link.
+  tags: [primitive, imu, simulation, mujoco, livox]
+  maintainers:
+    - Chen Yanting <1154270143@qq.com>
+  license: Apache-2.0
+build: bash ../../scripts/build-primitive.sh primitives/imu
+start: bash ../../scripts/start-primitive.sh primitives/imu primitives.common.imu mid360_imu
+stop: bash ../../scripts/stop-primitive.sh mid360_imu
+capabilities:
+  - name: robonix/primitive/imu/imu
+  - name: robonix/primitive/imu/driver

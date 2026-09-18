@@ -1,0 +1,9 @@
+map_id: scenesmith_multilevel_floor_2_v2
+saved_at: 2026-09-16T10:26:14+0000
+spatial_artifact: rtabmap.db
+cloud_points: 4874
+frame_id: map
+resolution: 0.05000000074505806
+width: 241
+height: 153
+origin: [-2.576575517654419, -2.944129467010498, 0.0]

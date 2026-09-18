@@ -1,0 +1,11 @@
+[contract]
+id = "robonix/skill/floor_transition/execute"
+version = "1"
+kind = "skill"
+idl = "floor_transition/srv/ExecuteFloorTransition.srv"
+
+[mode]
+type = "rpc"
+
+[semantics]
+user_invocable = true

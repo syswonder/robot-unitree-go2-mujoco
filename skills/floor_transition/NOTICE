@@ -1,0 +1,10 @@
+Go2 deployment-owned floor transition skill
+
+Docker/codegen/lifecycle packaging scaffolding was adapted from
+syswonder/skill-explore-rbnx at commit
+40bdfa8d143e5e7c28909992c63682111d8371dc (MulanPSL-2.0).
+
+The floor_transition contracts, two-floor state machine, scene annotation
+integration, policy switching, stair controller, map switching and tests are
+new deployment-specific work. This package does not retain the explore runtime
+identity or frontier exploration behavior.

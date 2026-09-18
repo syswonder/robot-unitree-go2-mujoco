@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!-- Navigation and sensor frames; articulated physics lives in the Go2 MJCF. -->
+<robot name="mujoco_go2">
+  <link name="base_link"/>
+  <link name="mid360_link"/>
+  <joint name="base_to_mid360" type="fixed">
+    <parent link="base_link"/><child link="mid360_link"/>
+    <origin xyz="0 0 0.16"/>
+  </joint>
+  <link name="imu_link"/>
+  <joint name="base_to_imu" type="fixed">
+    <parent link="base_link"/><child link="imu_link"/>
+    <origin xyz="-0.02557 0 0.04232"/>
+  </joint>
+  <link name="front_camera_optical_frame"/>
+  <joint name="base_to_front_camera" type="fixed">
+    <parent link="base_link"/><child link="front_camera_optical_frame"/>
+    <origin xyz="0.32 0 0.12" rpy="-1.5707963267948966 0 -1.5707963267948966"/>
+  </joint>
+</robot>

@@ -1,0 +1,36 @@
+{
+  "name": "robot-unitree-go2_mujoco",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Unitree Go2 with web WASM physics and a shared native ROS bridge control panel",
+  "scripts": {
+    "serve": "python3 ./scripts/serve.py --port 5181 --bind 0.0.0.0",
+    "test": "node --test tests/*.test.js",
+    "test:browser": "node tests/browser-smoke.js",
+    "test:memory": "node tests/wasm-memory.js",
+    "test:soak": "node tests/web-soak.js"
+  },
+  "keywords": [
+    "mujoco",
+    "robonix",
+    "go2",
+    "robotics",
+    "wasm",
+    "native"
+  ],
+  "author": "Chen Yanting",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@sparkjsdev/spark": "^2.0.0",
+    "mujoco-js": "^0.0.7",
+    "onnxruntime-web": "1.24.3",
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1"
+  }
+}

@@ -1,0 +1,7 @@
+string command       # UP | DOWN | GO_TO_FLOOR
+int32 target_floor   # required for GO_TO_FLOOR; ignored otherwise
+float32 timeout_s    # 0 uses the profile default
+---
+bool accepted
+string run_id
+string message

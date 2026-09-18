@@ -1,0 +1,23 @@
+manifestVersion: 1
+
+package:
+  name: robonix.skill.floor_transition
+  version: 0.1.0
+  description: Fixed-scene two-floor traversal and map switching for MuJoCo Go2.
+  tags: [skill, quadruped, stairs, navigation, mapping]
+  maintainers: [Chen Yanting <ytchen25@stu.pku.edu.cn>]
+  license: MulanPSL-2.0
+
+build: bash scripts/build.sh
+start: bash scripts/start.sh
+stop: bash scripts/stop.sh
+
+capabilities:
+  - name: robonix/skill/floor_transition/driver
+    path: capabilities/driver.v1.toml
+  - name: robonix/skill/floor_transition/execute
+    path: capabilities/execute.v1.toml
+  - name: robonix/skill/floor_transition/status
+    path: capabilities/status.v1.toml
+  - name: robonix/skill/floor_transition/cancel
+    path: capabilities/cancel.v1.toml

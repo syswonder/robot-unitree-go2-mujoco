@@ -1,0 +1,15 @@
+{
+  "repository": "nepfaff/scenesmith-example-scenes",
+  "revision": "5425b6ac0ee7d5043af75f9ec78494cf5c94f3ca",
+  "path": "House/scene_186.tar",
+  "sha256": "ffa2a7ceff7d7cb04325967624a8acfa99295aa9d924862cca8f9ba189266501",
+  "url": "https://huggingface.co/datasets/nepfaff/scenesmith-example-scenes/resolve/5425b6ac0ee7d5043af75f9ec78494cf5c94f3ca/House/scene_186.tar",
+  "license": "Apache-2.0",
+  "converter": "scripts/prepare-scenesmith.py",
+  "roomCount": 2,
+  "roomTypes": [
+    "bedroom",
+    "bathroom"
+  ],
+  "spawnYawRadians": 3.141592653589793
+}

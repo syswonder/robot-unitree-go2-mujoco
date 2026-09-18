@@ -1,0 +1,21 @@
+services:
+  bridge:
+    restart: "no"
+    command: ["bash", "sim/native/entrypoint.sh"]
+    environment:
+      SIM_ENVIRONMENT: ${SIM_ENVIRONMENT:?Select an environment through sim/start.sh}
+      SIM_ROBOT: go2
+      SIM_HEADLESS: ${SIM_HEADLESS:-0}
+      SIM_DEV: ${SIM_DEV:-0}
+      SIM_GPU_REQUIRED: ${SIM_GPU_REQUIRED:-1}
+      DISPLAY: ${DISPLAY:-:0}
+      WAYLAND_DISPLAY: ""
+      XDG_RUNTIME_DIR: /tmp/runtime-user
+      MUJOCO_GL: ${MUJOCO_GL:-glfw}
+      LD_LIBRARY_PATH: /usr/lib/wsl/lib
+    devices:
+      - /dev/dxg:/dev/dxg
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /mnt/wslg:/mnt/wslg
+      - /usr/lib/wsl:/usr/lib/wsl:ro

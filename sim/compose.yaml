@@ -1,0 +1,19 @@
+name: go2-mujoco-robonix
+services:
+  bridge:
+    build:
+      context: ..
+      dockerfile: sim/bridge/Dockerfile
+    image: go2-mujoco-robonix-bridge:humble
+    container_name: ${ROBONIX_SIM_CONTAINER:-mujoco_go2_sim}
+    network_mode: host
+    ipc: host
+    init: true
+    restart: unless-stopped
+    environment:
+      ROS_DOMAIN_ID: ${ROS_DOMAIN_ID:-0}
+      RMW_IMPLEMENTATION: ${MUJOCO_RMW_IMPLEMENTATION:-rmw_fastrtps_cpp}
+      PYTHONUNBUFFERED: "1"
+    volumes:
+      - ..:/workspace
+      - ${ROBONIX_SOURCE_PATH:-/home/cyt/robonix}/pylib:/robonix/pylib:ro

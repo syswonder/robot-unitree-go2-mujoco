@@ -1,5 +1,0 @@
-mujoco==3.3.6
-numpy==1.26.4
-PyYAML==6.0.2
-# Install CPU torch separately from https://download.pytorch.org/whl/cpu:
-# torch==2.8.0

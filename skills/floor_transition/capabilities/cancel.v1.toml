@@ -1,0 +1,11 @@
+[contract]
+id = "robonix/skill/floor_transition/cancel"
+version = "1"
+kind = "skill"
+idl = "floor_transition/srv/CancelFloorTransition.srv"
+
+[mode]
+type = "rpc"
+
+[semantics]
+user_invocable = true

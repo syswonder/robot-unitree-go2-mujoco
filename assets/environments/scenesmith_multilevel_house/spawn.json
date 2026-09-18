@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "sceneId": "scenesmith_multilevel_house",
+  "position": [
+    -2.95,
+    -1.7
+  ],
+  "yaw": 0,
+  "clearanceMeters": 0.5,
+  "method": "fixed-straight-stair-approach"
+}

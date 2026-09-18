@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "id": "go2",
+  "label": "Unitree Go2",
+  "description": "Go2 with RGB-D, LiDAR, IMU and optional go2_rl_gym MoE locomotion",
+  "dragRootBody": "base_link",
+  "model": "go2.xml",
+  "files": "index.json",
+  "controller": {
+    "module": "controller.js",
+    "export": "Go2Controller"
+  },
+  "policy": {
+    "id": "moe_rough",
+    "label": "MoE Rough Terrain",
+    "config": "policy/moe_rough/policy.json",
+    "autoLoad": false,
+    "options": [
+      {
+        "id": "moe_rough",
+        "label": "MoE Rough Terrain",
+        "config": "policy/moe_rough/policy.json",
+        "autoLoad": false
+      }
+    ]
+  },
+  "sensors": {
+    "lidar": {
+      "id": "mid360", "label": "Simulated 360 degree LiDAR", "site": "mid360_lidar_site",
+      "horizontalFovDeg": 360, "verticalFovDeg": [-7, 52],
+      "minRange": 0.1, "maxRange": 30, "raysPerScan": 1536,
+      "planarRays": 720, "planarElevationDeg": 0, "updateHz": 10
+    },
+    "imu": {
+      "site": "imu",
+      "gyroscope": "imu_gyro",
+      "accelerometer": "imu_acc",
+      "updateHz": 200
+    },
+    "cameras": [
+      {
+        "id": "front_rgbd",
+        "label": "Front RGB-D",
+        "camera": "front_rgbd_camera",
+        "width": 320,
+        "height": 240,
+        "depth": true,
+        "depthWidth": 160,
+        "depthHeight": 120,
+        "minDepth": 0.1,
+        "maxDepth": 15.0,
+        "depthGeomGroups": [0, 0, 0, 1, 0, 1],
+        "updateHz": 5
+      }
+    ]
+  },
+  "controlledActuators": [
+    "FR_hip",
+    "FR_thigh",
+    "FR_calf",
+    "FL_hip",
+    "FL_thigh",
+    "FL_calf",
+    "RR_hip",
+    "RR_thigh",
+    "RR_calf",
+    "RL_hip",
+    "RL_thigh",
+    "RL_calf"
+  ]
+}

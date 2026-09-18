@@ -1,0 +1,26 @@
+{
+  "objects": [
+    {
+      "sourceBody": "living_room_water_glass_tumbler_0",
+      "name": "task_water_glass",
+      "density": 320
+    },
+    {
+      "sourceBody": "living_room_potted_succulent_plant_0",
+      "name": "task_succulent",
+      "density": 420
+    },
+    {
+      "sourceBody": "living_room_tv_remote_control_0",
+      "name": "task_tv_remote",
+      "position": [3.27, 3.14, 0.563],
+      "quaternion": [0.1092, -0.0000960923, -0.00130756, -0.994019],
+      "density": 500
+    }
+  ],
+  "approach": {
+    "position": [3.92, 3.25],
+    "yaw": 0,
+    "description": "Living-room side table; the rear-mounted Piper faces the table."
+  }
+}

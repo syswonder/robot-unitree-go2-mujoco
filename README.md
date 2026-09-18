@@ -1,224 +1,415 @@
-# Unitree Go2 · Native MuJoCo × Robonix
+# Unitree Go2 MuJoCo for Robonix
 
-A standalone, simulation-only Go2 body package. It reuses the pinned Unitree
-MJCF and a pinned `rl_sar` Go2 walking policy, then supplies a Native runtime,
-ROS 2 feedback bridge and four Robonix device primitives. No physical robot,
-Unitree network interface, sport daemon, Docker image or closed-source gait is
-needed. This is separate from the validated physical Go2 navigation/RobotTrack
-deployment and does not replace it.
+<p align="center">
+  <strong>English</strong> | <a href="README.zh-CN.md">简体中文</a>
+</p>
 
-![Actual MuJoCo Go2 rendering](docs/walking-demo.png)
+<p align="center">
+  <img src="docs/media/scene185_native.png" alt="Unitree Go2 in SceneSmith House 185 using native MuJoCo" width="900">
+</p>
 
-## Integration and current acceptance
+A self-contained Robonix body package for a simulated Unitree Go2. It provides
+Web MuJoCo WASM and native Python MuJoCo backends with the same chassis, LiDAR,
+IMU, RGB-D, mapping, exploration, navigation, and Scene capabilities.
+
+The included `go2_rl_gym` MoE ONNX policy can be loaded or disabled while the
+simulator is running and is **disabled at startup**. Without the policy, a
+deterministic gait handles indoor flat-floor motion. The package contains no
+physical Unitree transport, arm, speech, or policy-training dependency.
+
+## Demo
+
+### Indoor Navigation
+
+| Web MuJoCo | Native MuJoCo |
+| --- | --- |
+| ![Go2 in House 185 using Web MuJoCo](docs/media/scene185_web.png) | ![Go2 in House 185 using native MuJoCo](docs/media/scene185_native.png) |
+| SceneSmith House 185 | SceneSmith House 185 |
+
+Both backends publish the same simulated ROS 2 sensor and odometry interfaces.
+MuJoCo geometry remains the source of collision, LiDAR, and depth data; the
+SceneSmith Mesh assets provide the visible environment.
+
+### Rough-Terrain Policy
+
+| Stair course | Race track |
+| --- | --- |
+| ![Go2 on the native stair course](docs/media/rl_stairs_native.png) | ![Go2 on the native race track](docs/media/rl_track_native.png) |
+| `go2_rl_stairs` | `go2_rl_track` |
+
+These courses are intended for direct policy evaluation. They do not provide
+the calibrated maps and semantic annotations used by indoor navigation.
+
+## Capabilities
+
+| Component or service | Provider | Exposed capability |
+| --- | --- | --- |
+| Go2 base | `go2_chassis` | Measured relative motion, continuous Twist input, odometry |
+| MID-360 LiDAR | `mid360_lidar` | 2D LaserScan, 3D PointCloud2, snapshots |
+| MID-360 IMU | `mid360_imu` | Angular velocity and linear acceleration |
+| Front RGB-D camera | `front_camera` | RGB, optical depth, calibration, snapshots |
+| RTAB-Map | `mapping` | Occupancy map, fused cloud, map-frame pose, persistence |
+| Nav2 | `nav2` | Absolute pose navigation, speed limits, obstacle avoidance |
+| Scene | `scene` | Observed objects, spatial context, safe nearby goals |
+| Explore | `explore` | Asynchronous frontier exploration |
+| Floor transition | `floor_transition` | Calibrated stair traversal and per-floor map switching |
+
+Relative commands such as "move forward 0.3 metres" use measured chassis
+odometry. Absolute map coordinates and Scene object destinations use Nav2.
+Semantic navigation only targets objects actually observed through the RGB-D
+camera; simulator object coordinates are not injected into Scene.
+
+## Architecture
 
 ```text
-Robonix caller → Atlas discovery → chassis/move gRPC ─────┐
-ROS /go2_sim/cmd_vel → Bridge ────────────────────────────┤
-Local web velocity controls ─────────────────────────────┤
-                                                       ▼
-                           localhost HTTP /command → one-writer 0.4 s lease
-                                                       ▼
-                       body velocity → yaw feedback → pinned RL policy (50 Hz)
-                                                       ▼
-                       12 named joint targets → bounded PD torque (200 Hz)
-                                                       ▼
-                             official MJCF + MuJoCo mj_step
-                                                       ▼
-              odometry / joints / IMU / ray scan / rendered RGB-D / simulation time
-                                                       ▼
-                         Bridge → ROS 2 / TF → Robonix sensor capabilities
+rbnx chat / rbnx ask
+        |
+Pilot + Executor + Atlas + Soma
+        |
+Scene / Mapping / Nav2 / Explore / Floor Transition
+        |
+four local primitives
+        |
+ROS 2 <-> WebSocket bridge <-> Web MuJoCo WASM
+                         \----> native Python MuJoCo
+                               |-- joint-torque control
+                               |-- LiDAR, IMU and RGB-D
+                               `-- optional ONNX inference
 ```
 
-The Native process, not the browser, owns physics. `/web` is a live RGB camera
-preview and command panel, **not a MuJoCo WASM implementation**. `--viewer`
-opens the full Native 3D scene. Reset is the only direct root-pose assignment;
-walking is produced by motor torques and contacts, not pose animation.
+Robot dimensions and capability composition are defined in `soma.yaml`; the
+transform tree is in `urdf/go2.urdf`; robot-specific Mapping and Nav2 parameters
+live in `config/`. See [simulation architecture](docs/ARCHITECTURE.md) for the
+runtime boundaries.
 
-On 2026-09-11, with a repeat on 2026-09-12, actual local acceptance covered:
+## Requirements
 
-- Standing, forward/backward motion, left lateral motion and both yaw directions.
-  A 0.4 m/s forward command over 5 simulated seconds produced about 1.92 m.
-- ROS RGB-D, scan, IMU, joint states, odometry, TF and advancing `/clock`;
-  ROS command movement, command-expiry stop, Trigger stop and reset.
-- `rbnx boot`: Atlas, Soma, Executor and four ACTIVE device primitives; 13
-  primitive capabilities, without namespace mismatches.
-- Atlas-discovered gRPC movement: timed velocity, 0.5 m relative motion
-  (measured about 0.47 m at return), 45° rotation (about 42.8° at return),
-  concurrent-call rejection, lifecycle cancellation and invalid-input rejection.
+The package is designed for x86_64 Ubuntu 22.04 or WSL2 with:
 
-Measured reports: [acceptance](docs/acceptance.md). The 18-second
-[Native recording](docs/walking-demo.mp4) shows real simulated walking and
-turning. These results do not claim terrain robustness, calibrated EDU payload
-physics, proprietary Unitree 2010 gait equivalence, physical robot performance,
-autonomous SLAM/Nav2, or language-driven room exploration. Downstream services
-can consume the interfaces below, but those complete tasks need their own tests.
+- Docker Engine and the Compose plugin;
+- Node.js 20 or newer, Python 3.10+, `uv`, and `curl`;
+- an installed `rbnx` CLI and a local Robonix source tree;
+- Chromium with WebGL 2 for the Web backend;
+- X11/WSLg, hardware OpenGL, and the configured GPU device for the native viewer;
+- network access to npm, GitHub, and Playwright downloads during bootstrap.
 
-## Requirements and installation
+Native MuJoCo physics and the included ONNX network run on CPU. The native
+viewer and offscreen RGB camera use OpenGL. `--headless` closes the viewer but
+still requires working camera rendering.
 
-Validated host profile: Ubuntu 22.04 x86_64, Python 3.10, ROS 2 Humble,
-MuJoCo 3.3.6, NumPy 1.26.4, CPU PyTorch 2.8.0; EGL for rendered camera frames.
-Physics and policy run on CPU. A working OpenGL/EGL context is required for RGB-D;
-X11/Wayland is additionally needed for `--viewer`. Headless does not mean
-camera rendering needs no graphics context.
+## Installation
 
-Install ROS 2 Humble, CycloneDDS RMW, standard messages, `tf2_ros`, `colcon` and
-Robonix using their own installation instructions. Robonix must provide `rbnx`,
-`robonix-atlas`, `robonix-soma`, `robonix-executor`, codegen and a Python
-environment containing `robonix_api`, `grpcio` and `grpcio-tools`. Keep gRPC
-runtime/codegen versions compatible. No system/ROS dependency installation is
-performed implicitly by this repository's build or startup scripts.
+### 1. Install Robonix
+
+Install Robonix and make its source tree available locally.
+
+### 2. Configure this body package
 
 ```bash
-git clone https://github.com/syswonder/robot-unitree-go2-mujoco.git
-cd robot-unitree-go2-mujoco
-python3 -m venv --system-site-packages .venv
-.venv/bin/python -m pip install -r requirements-sim.txt
-.venv/bin/python -m pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cpu
-export GO2_SIM_PYTHON="$PWD/.venv/bin/python"
-# Optional: a separate existing Robonix Python environment, with grpc and rclpy:
-# export GO2_PROVIDER_PYTHON=/absolute/path/to/robonix-env/bin/python
-export PYTHONPATH="$PWD${PYTHONPATH:+:$PYTHONPATH}"
-bash build.sh
+git clone <repository-url> ~/robot-unitree-go2_mujoco
+cd ~/robot-unitree-go2_mujoco
+cp .env.example .env
 ```
 
-`build.sh` verifies/downloads 22 immutable model, configuration and license
-files, exports a kinematic/inertial URDF for Soma, and runs Robonix codegen/build.
-Assets stay in `.runtime/assets/`. Model and policy pins/checksums are in
-`assets.lock.json`; a modified cached asset causes a digest error instead of being
-overwritten. For offline model reuse:
+Edit `.env` and provide at least:
+
+```dotenv
+ROBONIX_SOURCE_PATH=/home/your-name/robonix
+VLM_BASE_URL=your-model-url
+VLM_API_KEY=replace-me
+VLM_MODEL=your-model-name
+```
+
+Keep credentials in the ignored `.env` file or exported environment variables.
+The simulator itself does not need a VLM key; Pilot and Scene use it for
+language and visual reasoning.
+
+### 3. Bootstrap
 
 ```bash
-.venv/bin/python scripts/prepare_assets.py --model-source /path/to/unitree_mujoco
+bash scripts/bootstrap.sh
 ```
 
-Robonix generates a canonical ROS IDL overlay once in the chassis package; the
-sensor primitives share it. Other generated Python/protobuf artifacts remain
-per-package. Do not point this overlay at the physical robot deployment.
+Bootstrap installs frontend dependencies and Playwright Chromium, builds the
+ROS 2 bridge image, generates primitive bindings, validates local packages, and
+builds the Robonix deployment. Runtime assets and the pretrained policy are
+already included; ordinary startup does not download SceneSmith datasets or
+train a policy.
 
-## Start, inspect, stop
+## Start
 
-Terminal 1 (Native simulation plus ROS Bridge):
+Use three terminals. Only one simulator backend and one Robonix stack may own
+the configured ROS graph and ports at a time.
+
+### Terminal 1: MuJoCo Simulator
+
+Web backend:
 
 ```bash
-bash start.sh                         # headless Native + RGB-D + web preview
-# bash start.sh --viewer              # Native interactive 3D viewer
-# bash start.sh --duration 75          # bounded simulator lifetime in wall seconds
+cd ~/robot-unitree-go2_mujoco
+bash sim/start.sh --backend web --environment scenesmith_house_185
 ```
 
-Open **http://127.0.0.1:18765/web**. Hold a movement button to refresh its command;
-releasing it requests zero velocity. Stop/reset affect simulation only. A web
-owner, ROS stream, and Primitive RPC never add their velocities together.
-Only one source can refresh a live lease; it expires after 0.4 s without updates.
-
-Terminal 2 (Robonix):
+Native viewer:
 
 ```bash
-export ROBONIX_ATLAS=127.0.0.1:54151
-rbnx boot -f robonix_manifest.yaml --no-update-check
+bash sim/start.sh --backend native --viewer --environment scenesmith_house_185
 ```
 
-Terminal 3 (inspection):
+Native without the viewer:
 
 ```bash
-rbnx caps --server 127.0.0.1:54151 -v
+bash sim/start.sh --backend native --headless --environment scenesmith_house_185
 ```
 
-`rbnx shutdown -f robonix_manifest.yaml` stops this Robonix stack. Ctrl-C in
-Terminal 1 stops this simulator and Bridge and releases the renderer. Shutdown
-uses this launcher's own child PIDs, never broad `pkill`. Running without camera
-via `--no-camera` is useful for physics debugging, but the full camera-enabled
-Robonix manifest will correctly fail camera readiness in that mode.
-Alternatively, after `rbnx shutdown`, run `bash sim/stop.sh` from another terminal
-to ask the verified local Native endpoint to exit and release its resources.
+Wait for `[sim/start] ... ready`. The operator pages are:
 
-Private ports: Native HTTP **18765**, Atlas **54151**, Executor **54161**, Soma
-**54191**; provider ports are allocated by Robonix. ROS uses localhost-only
-domain **141**, CycloneDDS, with task-process DDS configuration overrides cleared.
-This is process isolation, not a change to host network configuration. Avoid
-using domain 141 for another simulation at the same time. Do not remap these
-interfaces to `/api/sport/request`, `/lowcmd`, or a physical robot's command topic.
+```text
+Web:          http://127.0.0.1:5181/
+Native panel: http://127.0.0.1:5181/?backend=native
+Bridge:       http://127.0.0.1:8766/health
+```
 
-## Interface reference
-
-All distances are meters, linear velocities m/s and angular velocities rad/s.
-Go2 body axes: +X forward, +Y left, +Z up; positive yaw turns left.
-
-| Robonix capability | Native/ROS endpoint | Content |
-| --- | --- | --- |
-| `chassis/move` | discovered gRPC | `chassis/ExecuteMoveCommand` |
-| `chassis/twist_in` | `/go2_sim/cmd_vel` | `geometry_msgs/Twist` |
-| `chassis/odom` | `/go2_sim/odom` | `nav_msgs/Odometry`, body-frame twist |
-| `lidar/lidar` | `/go2_sim/scan` | 180 actual geometric rays, 20 Hz target |
-| `camera/rgb` | `/go2_sim/camera/color/image_raw` | 320×240, `rgb8`, 5 Hz target |
-| `camera/depth` | `/go2_sim/camera/depth/image_raw` | same optical geometry, `32FC1` meters |
-| `camera/intrinsics` | `/go2_sim/camera/camera_info` | `CameraInfo`, reliable/transient-local |
-| `camera/extrinsics` | `/go2_sim/camera/extrinsics` | `TransformStamped`, reliable/transient-local |
-| `imu/imu` | `/go2_sim/imu` | simulated native gyro/accelerometer, 20 Hz target |
-
-Capability prefixes above abbreviate `robonix/primitive/`. Every device also
-exposes the standard `*/driver` lifecycle capability. Other ROS endpoints:
-`/clock`, `/tf`, `/tf_static`, `/go2_sim/joint_states`, `/go2_sim/status`,
-and Trigger services `/go2_sim/stop`, `/go2_sim/reset`.
-
-`chassis/move` modes follow the standard priority: nonzero `forward_m`, then
-nonzero `rotate_deg`, otherwise velocity fields plus `duration_sec` (default 1 s).
-Relative movement uses measured pose, not speed-times-duration estimates.
-Supported axes are `linear_x`, `linear_y`, `angular_z`. Native limits are
-±0.5 m/s forward/backward, ±0.3 m/s lateral, ±0.6 rad/s yaw. Bursts are bounded
-to 30 s; larger plans should compose moves. Relative requests support up to 5 m
-or 360° with a 30 s timeout. A timeout is reported, never claimed as completion.
-
-Raw HTTP examples for a local simulator only:
+### Terminal 2: Robonix Body Package
 
 ```bash
-curl -s http://127.0.0.1:18765/state
-curl -s -H 'Content-Type: application/json' -d '{"owner":"example","velocity":[0.2,0,0]}' http://127.0.0.1:18765/command
-curl -s -H 'Content-Type: application/json' -d '{"stop":true}' http://127.0.0.1:18765/command
+cd ~/robot-unitree-go2_mujoco
+source scripts/env.sh
+rbnx boot --no-update-check
 ```
 
-A single HTTP command lasts at most 0.4 s. Repeat at 10 Hz for sustained motion,
-or use the timed Robonix interface. This API is loopback-only and is not designed
-as an authenticated remote-control service.
+Run `rbnx boot` from the repository root so it finds
+`robonix_manifest.yaml`. Mapping, Nav2, Scene, and the four primitives should
+become `ACTIVE`; skills may remain inactive until requested.
 
-## Reproduce acceptance
+### Terminal 3: Chat
 
 ```bash
-bash scripts/validate.sh              # assets, 15 unit tests, six dynamic cases
-# With start.sh running, from this repository:
-source /opt/ros/humble/setup.bash
-export ROS_DOMAIN_ID=141 ROS_LOCALHOST_ONLY=1 RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-export PYTHONPATH="$PWD${PYTHONPATH:+:$PYTHONPATH}"
-"$GO2_SIM_PYTHON" scripts/test_ros.py
-# With rbnx boot also running; use the Robonix Python environment:
-export ROBONIX_ATLAS=127.0.0.1:54151
-export PYTHONPATH="$PWD:$(rbnx path robonix-api):$PWD/primitives/go2_sim_chassis/rbnx-build/codegen/proto_gen:$PYTHONPATH"
-"${GO2_PROVIDER_PYTHON:-python3}" scripts/test_robonix.py
-# Optional actual dynamics recording (ffmpeg required):
-MUJOCO_GL=egl "$GO2_SIM_PYTHON" scripts/record_demo.py
+cd ~/robot-unitree-go2_mujoco
+source scripts/env.sh
+rbnx caps -v
+rbnx tools
+rbnx chat
 ```
 
-Tests actively move only the isolated simulator, so do not run them while
-manually driving it. JSON reports are generated under `.runtime/`. The provided
-`ci/validate.yaml` workflow template runs offline model/command/physics tests;
-move it to `.github/workflows/validate.yaml` when workflow-write permission is
-available. The publishing credential does not have that scope, so GitHub Actions
-is not claimed as executed. The local ROS/Robonix/EGL acceptance is
-recorded separately rather than misrepresented as a cloud end-to-end CI run.
+Example requests:
 
-## Sources and integration boundaries
+```text
+Capture the front camera and describe the room.
+Move forward by 0.3 metres.
+Navigate to map coordinate x=6.09, y=2.05 with final yaw=0.
+Explore the rooms for 120 seconds at no more than 0.18 m/s and return the task ID.
+List the objects observed by Scene.
+Move near the closest observed table.
+In the multilevel house, go upstairs, downstairs, or to floor 1/2.
+```
 
-- [Robonix MuJoCo onboarding guide](https://book.robonix.ai/integration-guide/mujoco-simulation-onboarding).
-- [Unitree Go2 model](https://github.com/unitreerobotics/unitree_mujoco/tree/1eb6642e3f3fdfb7fb13a9794fd6a2dd93ea0e7d/unitree_robots/go2), BSD-3-Clause.
-- [rl_sar Go2 policy](https://github.com/fan-ziqi/rl_sar/tree/376d42c9b128f963ab08579762d5a216a976ce39/policy/go2), Apache-2.0.
-- [Earlier physical-Go2 resource handoff PR #8](https://github.com/syswonder/robot-unitree-go2/pull/8) is merged; this independent runtime extends that resource work.
+Exploration and floor transition are asynchronous. Keep the returned `run_id`
+for status and cancellation. Do not run direct motion, navigation, exploration,
+or floor transition concurrently.
 
-The model is the upstream generic Go2, not a calibrated model of every EDU
-accessory. RGB-D and planar LiDAR are ideal virtual sensors, not exact D435i or
-MID-360 replicas. IMU/TF/mounts and the Soma URDF agree with this simulation.
-The URDF intentionally exports kinematics/inertia without another visual/contact
-model; the MJCF is authoritative. Its planning footprint is conservative.
+## Policy and Controls
 
-The added yaw feedback corrects measured idle drift of this model-policy pairing:
-`policy_yaw = clip(requested_yaw + 2 × wrap(target_heading − measured_heading), −1, 1)`.
-It does not change policy weights, mesh files, joint ordering or source MJCF.
-See [NOTICE](NOTICE) and [LICENSE](LICENSE) for attribution.
+The policy selector and `Load / Disable Policy` action are in the top-right
+`Simulation > Policy` folder for both backends. Loading or disabling a policy
+does not reset the robot pose. Production mode leaves motion under Robonix and
+does not register keyboard driving or native viewer motion callbacks.
+
+Enable local keyboard driving explicitly for development:
+
+```bash
+bash sim/start.sh --backend web --dev --environment go2_rl_stairs
+bash sim/start.sh --backend native --viewer --dev --environment go2_rl_stairs
+```
+
+Development keys are W/S forward/backward, A/D yaw, Q/E lateral, Space stop,
+and X reset. The native viewer also supports L to load or disable the policy.
+
+The included policy is `go2_moe_cts_high_slope_thre_164k_0.6715` from
+`wty-yy/go2_rl_gym`. It consumes five 45-value observation frames, runs at
+50 Hz with a 0.002 s physics step, and preserves the upstream joint order,
+action scale, and PD gains. See
+[policy provenance](assets/robots/go2/policy/moe_rough/UPSTREAM.md).
+
+When the policy is disabled, a deterministic joint-torque gait provides flat
+indoor locomotion. When it is loaded, bounded velocity feedback compensates the
+released policy for low-speed navigation commands. Neither controller guarantees
+safe traversal of arbitrary terrain.
+
+## Environments
+
+| Environment ID | Purpose | Web | Native |
+| --- | --- | --- | --- |
+| `scenesmith_house_185` | Multiroom living area and bathroom; default mapping/navigation scene | Yes | Yes |
+| `scenesmith_house_186` | Multiroom bedroom and bathroom | Yes | Yes |
+| `go2_rl_stairs` | Original go2_rl_gym stair course | Yes | Yes |
+| `go2_rl_track` | Original go2_rl_gym race track | Yes | Yes |
+| `scenesmith_multilevel_house` | Calibrated two-floor house with one straight stair | Yes | Yes; recommended for floor transition |
+
+Stop Robonix and the simulator before changing environments, then restart both
+with the new environment ID. This prevents stale maps and semantic poses from
+being reused in another scene.
+
+### Environment Gallery
+
+#### Web MuJoCo
+
+| House 185 | House 186 |
+| --- | --- |
+| ![House 185 in Web MuJoCo](docs/media/scene185_web.png) | ![House 186 in Web MuJoCo](docs/media/scene_186_web.png) |
+| Stair course | Race track |
+| ![Stair course in Web MuJoCo](docs/media/rl_stairs_web.png) | ![Race track in Web MuJoCo](docs/media/rl_track_web.png) |
+
+#### Native MuJoCo
+
+| House 185 | House 186 |
+| --- | --- |
+| ![House 185 in native MuJoCo](docs/media/scene185_native.png) | ![House 186 in native MuJoCo](docs/media/scene186_native.png) |
+| Stair course | Race track |
+| ![Stair course in native MuJoCo](docs/media/rl_stairs_native.png) | ![Race track in native MuJoCo](docs/media/rl_track_native.png) |
+
+Two-floor house:
+
+<p align="center">
+  <img src="docs/media/scene_multifloors_native.png" alt="Two-floor SceneSmith house in native MuJoCo" width="560">
+</p>
+
+Scene provenance and repeatable import commands are recorded in
+[docs/scenes.md](docs/scenes.md).
+
+## Floor Transition
+
+<p align="center">
+  <a href="docs/media/floor_transition.mp4">
+    <img src="docs/media/floor_transition.gif" alt="Go2 climbing the calibrated straight stair" width="720">
+  </a>
+</p>
+
+<p align="center">
+  <a href="docs/media/floor_transition.mp4">Watch the complete 88-second ascent and descent demo</a>
+</p>
+
+`floor_transition` is a deployment-owned skill for the fixed
+`scenesmith_multilevel_house` environment. It approaches the calibrated stair
+with the deterministic gait, loads `moe_rough` for the stair segment, verifies
+position, heading, lane error, body attitude and landing height, then loads the
+destination floor map. It supports `UP`, `DOWN`, `GO_TO_FLOOR(1|2)`, status,
+and cancellation.
+
+Install the packaged maps before the first run:
+
+The installer expands the repository's xz-compressed databases to
+`rtabmap.db` in the runtime map directory; Git LFS is not required.
+
+```bash
+bash scripts/install-prebuilt-maps.sh
+bash sim/start.sh --backend native --viewer --environment scenesmith_multilevel_house
+```
+
+Deterministic commands that bypass Pilot/VLM are available after the simulator
+and Robonix stack are running:
+
+```bash
+bash scripts/floor-transition.sh up
+bash scripts/floor-transition.sh down
+bash scripts/floor-transition.sh floor 2
+bash scripts/floor-transition.sh floor 1
+```
+
+This skill is calibrated for one known straight stair and two packaged floor
+maps. It does not discover unknown stairs, select among multiple connectors,
+plan a single 2D path across floors, or provide real-hardware safety
+certification. Do not copy the existing coordinates to another environment.
+See the [multi-floor demo guide](docs/MULTI_FLOOR_DEMO.zh-CN.md) for the state
+sequence, annotations, map identities, safety checks, and manual acceptance.
+
+## Validation
+
+Offline checks:
+
+```bash
+npm test
+python3 -m unittest discover -s primitives/tests
+```
+
+Live checks after starting the simulator and Robonix:
+
+```bash
+# Sensors, registered providers and map:
+bash scripts/acceptance.sh --require-stack --require-map
+
+# Measured forward/backward and +/-30 degree rotation:
+bash scripts/acceptance.sh --relative 0.4
+
+# Absolute map-frame arrival and cancellation; choose a free mapped pose:
+bash scripts/acceptance.sh --navigate 5.6 2.4 --yaw 0
+
+# Scene object approach and autonomous exploration:
+bash scripts/acceptance.sh --semantic --object-id scene.object.table_001
+bash scripts/acceptance.sh --explore --explore-duration 150 --explore-timeout 240 --explore-speed 0.18
+
+# Native model, sensors and policy switching:
+docker exec mujoco_go2_sim python3 /workspace/sim/tests/native_smoke.py --environment all --policy
+```
+
+Acceptance moves the robot. Run motion and navigation once with `moe_rough`
+disabled and once after loading it, without another active controller.
+
+## Stop
+
+```bash
+cd ~/robot-unitree-go2_mujoco
+source scripts/env.sh
+rbnx shutdown
+bash sim/stop.sh
+```
+
+The lifecycles are independent: `rbnx shutdown` does not stop MuJoCo, and
+`sim/stop.sh` does not stop Robonix. Logs are written under `.runtime/` and
+`rbnx-boot/logs/`.
+
+## Add Environments
+
+Environment packages are registered in `assets/environments/manifest.json`.
+A Mesh environment normally contains `scene.xml`, `index.json`, `spawn.json`,
+and referenced meshes/textures. SceneSmith conversion, collision preparation,
+spawn search, map generation, and source checksums are documented in
+[docs/scenes.md](docs/scenes.md). Add new environments as environment packages;
+do not duplicate the Go2 primitives or policy controller per scene.
+
+## Limitations and Safety
+
+- This package controls a simulated Go2; it is not a real-hardware safety layer.
+- Direct relative motion is not collision-aware; use Nav2 for room-scale travel.
+- Scene cannot navigate to an object that has not been observed.
+- Exploration, navigation, direct motion, and floor transition require exclusive
+  motion ownership.
+- The rough-terrain policy is a released pretrained controller, not a guarantee
+  of success on arbitrary stairs, slopes, friction, or obstacle geometry.
+- Resetting or dragging the robot invalidates active Mapping/Nav2 tasks and
+  persisted floor-transition assumptions.
+
+## Repository Layout
+
+| Path | Purpose |
+| --- | --- |
+| `assets/robots/go2/` | Go2 MJCF, meshes, deterministic controller and ONNX policy |
+| `assets/environments/` | Independently selectable scene packages |
+| `primitives/` | Chassis, LiDAR, IMU and RGB-D providers |
+| `skills/explore/` | Frontier exploration adaptation |
+| `skills/floor_transition/` | Calibrated two-floor stair skill |
+| `sim/native/` | Native MuJoCo runtime and policy inference |
+| `sim/bridge/` | ROS 2 and WebSocket bridge |
+| `src/` | Web MuJoCo runtime, sensors and operator panel |
+| `config/`, `soma.yaml`, `urdf/` | Navigation, body composition and transforms |
+| `robonix_manifest.yaml` | Robonix deployment entry point |
+
+## Upstream Projects and License
+
+The integration follows runtime patterns from
+[mujoco_robonix](../mujoco_robonix), builds on
+[MuJoCo-GS-Web](https://github.com/Vector-Wangel/MuJoCo-GS-Web), and references
+the [real Go2 Robonix body package](https://github.com/syswonder/robot-unitree-go2).
+MuJoCo model assets retain their Unitree BSD notice; the frontend foundation
+retains its MIT license. SceneSmith assets and go2_rl_gym weights/courses retain
+their upstream notices. See [NOTICE](NOTICE) and the repository license files.

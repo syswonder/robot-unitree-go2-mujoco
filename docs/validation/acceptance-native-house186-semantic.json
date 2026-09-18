@@ -1,0 +1,126 @@
+{
+  "ok": true,
+  "checks": {
+    "sensors": {
+      "frames": {
+        "scan": "mid360_link",
+        "cloud": "mid360_link",
+        "imu": "imu_link",
+        "rgb": "front_camera_optical_frame",
+        "depth": "front_camera_optical_frame",
+        "info": "front_camera_optical_frame",
+        "odom": "odom",
+        "joints": "base_link"
+      },
+      "stamp_skew_s": 0.02800000000002001,
+      "front_rgb": {
+        "spatial_std": 53.84208306160934,
+        "width": 320,
+        "height": 240
+      },
+      "front_depth": {
+        "valid": 76800,
+        "min_m": 0.71809321641922,
+        "max_m": 0.9116779565811157
+      },
+      "cloud": {
+        "points": 1379,
+        "valid": 1379
+      },
+      "leg_joints": [
+        "FL_hip_joint",
+        "FL_thigh_joint",
+        "FL_calf_joint",
+        "FR_hip_joint",
+        "FR_thigh_joint",
+        "FR_calf_joint",
+        "RL_hip_joint",
+        "RL_thigh_joint",
+        "RL_calf_joint",
+        "RR_hip_joint",
+        "RR_thigh_joint",
+        "RR_calf_joint"
+      ]
+    },
+    "stack": {
+      "front_camera": "ACTIVE",
+      "explore": "INACTIVE",
+      "executor": "ACTIVE",
+      "scene": "ACTIVE",
+      "liaison": "ACTIVE",
+      "mid360_lidar": "ACTIVE",
+      "mapping": "ACTIVE",
+      "nav2": "ACTIVE",
+      "go2_chassis": "ACTIVE",
+      "pilot": "ACTIVE",
+      "soma": "ACTIVE",
+      "mid360_imu": "ACTIVE"
+    },
+    "map": {
+      "free": 4297,
+      "occupied": 514,
+      "map_stamp_s": 231.252,
+      "cloud_stamp_s": 231.252,
+      "epoch_start_s": 0.0,
+      "known_area_m2": 12.027500358447435,
+      "cloud": {
+        "points": 646,
+        "valid": 646
+      }
+    },
+    "semantic": {
+      "object_id": "scene.object.shelf_001",
+      "observation": {
+        "object_id": "scene.object.shelf_001",
+        "label": "shelf",
+        "caption": "shelf",
+        "x": 3.816313201095728,
+        "y": 3.8271156424025645,
+        "z": 0.27610127170380805,
+        "confidence": 0.5301321787493569,
+        "observation_count": 90,
+        "last_seen_unix": 1788866969.264796
+      },
+      "status": {
+        "known": true,
+        "state": "SUCCEEDED",
+        "detail": "succeeded; distance_remaining=0.111m recoveries=0 last_pose=(4.369,3.303)"
+      },
+      "map_after": {
+        "free": 4354,
+        "occupied": 521,
+        "map_stamp_s": 288.892,
+        "cloud_stamp_s": 288.892,
+        "epoch_start_s": 0.0,
+        "known_area_m2": 12.187500363215808,
+        "cloud": {
+          "points": 702,
+          "valid": 702
+        }
+      },
+      "target": [
+        4.381956348195672,
+        3.4000000115484,
+        2.4948372266708523
+      ],
+      "actual": [
+        4.36778854466015,
+        3.302419218738463,
+        2.392964217746025
+      ],
+      "position_error_m": 0.09860394405112309,
+      "yaw_error_rad": 0.10187300892482742,
+      "max_displacement_m": 0.6110574311319124,
+      "samples": 728,
+      "max_tilt_rad": 0.13014589935010143
+    }
+  },
+  "skipped": [
+    "motion",
+    "navigation",
+    "cancellation",
+    "exploration"
+  ],
+  "cleanup_errors": [],
+  "elapsed_s": 23.471
+}

@@ -1,0 +1,48 @@
+schema_version: 1
+environment_id: scenesmith_multilevel_house
+annotation_method: manually_calibrated
+coordinate_frame: map
+
+scope:
+  supported_floors: [1, 2]
+  supported_commands: [UP, DOWN, GO_TO_FLOOR]
+  automatic_stair_discovery: false
+
+floors:
+  1:
+    map_id: scenesmith_multilevel_floor_1_v2
+    initial_pose: {x: -2.95, y: -1.70, yaw: 0.0}
+  2:
+    map_id: scenesmith_multilevel_floor_2_v2
+    initial_pose: {x: 5.77, y: -1.70, yaw: 0.0}
+
+connection:
+  id: main_stair
+  type: straight_stair
+  lane_y: -1.70
+  entry_xy_tolerance_m: 0.28
+  entry_yaw_tolerance_rad: 0.18
+  alignment_yaw_tolerance_rad: 0.08
+  direct_alignment_radius_m: 0.45
+  alignment_speed_rad_s: 0.50
+  alignment_timeout_s: 15.0
+  max_lane_error_m: 0.38
+  minimum_upright_cosine: 0.70
+
+  up:
+    from_floor: 1
+    to_floor: 2
+    approach: {x: -2.95, y: -1.70, yaw: 0.0}
+    target_x: 5.72
+    speed_m_s: 0.50
+    timeout_s: 36.0
+    expected_height: {min: 3.20, max: 3.60}
+
+  down:
+    from_floor: 2
+    to_floor: 1
+    approach: {x: 5.77, y: -1.70, yaw: 3.141592653589793}
+    target_x: -2.68
+    speed_m_s: 0.50
+    timeout_s: 40.0
+    expected_height: {min: 0.25, max: 0.65}

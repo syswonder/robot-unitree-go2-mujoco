@@ -1,0 +1,354 @@
+<mujoco model="go2_rl_stairs">
+  <statistic center="0 0 0.1" extent="0.8" />
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0" />
+    <rgba haze="0.15 0.25 0.35 1" />
+    <global azimuth="-130" elevation="-20" />
+  </visual>
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072" />
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3" markrgb="0.8 0.8 0.8" width="300" height="300" />
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.0" />
+  </asset>
+  <worldbody>
+    <light pos="0 0 1.5" dir="0 0 -1" directional="true" />
+    <geom name="go2_rl_stairs_0_collision" size="0 0 0.05" type="plane" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="1.3 0.0 0.025" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_1_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="1.6 0.0 0.07500000000000001" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_2_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="1.9 0.0 0.125" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_3_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="2.2 0.0 0.17500000000000002" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_4_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="2.5 0.0 0.225" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_5_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="2.8 0.0 0.275" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_6_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="3.4499999999999997 0.0 0.32500000000000007" type="box" size="0.5 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_7_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="4.1 0.0 0.275" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_8_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="4.3999999999999995 0.0 0.22500000000000003" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_9_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="4.699999999999999 0.0 0.17500000000000002" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_10_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="5.0 0.0 0.125" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_11_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="5.3 0.0 0.07500000000000001" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_12_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="5.6 0.0 0.025000000000000022" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_13_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="6.25 0.0 0.025" type="box" size="0.5 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_14_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="6.898999999999999 0.0 0.04" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_15_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="7.198999999999999 0.0 0.12" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_16_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="7.498999999999999 0.0 0.2" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_17_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="7.7989999999999995 0.0 0.28" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_18_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="8.099 0.0 0.36" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_19_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="8.399 0.0 0.44" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_20_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="9.049 0.0 0.52" type="box" size="0.5 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_21_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="9.698999999999998 0.0 0.44" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_22_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="9.998999999999999 0.0 0.36" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_23_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="10.299 0.0 0.28" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_24_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="10.598999999999998 0.0 0.2" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_25_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="10.899 0.0 0.12" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_26_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="11.198999999999998 0.0 0.03999999999999998" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_27_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="11.849 0.0 0.04" type="box" size="0.5 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_28_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="12.498 0.0 0.055" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_29_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="12.797999999999998 0.0 0.165" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_30_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="13.097999999999999 0.0 0.275" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_31_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="13.397999999999998 0.0 0.385" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_32_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="13.697999999999999 0.0 0.495" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_33_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="13.997999999999998 0.0 0.605" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_34_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="14.647999999999998 0.0 0.7150000000000001" type="box" size="0.5 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_35_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="15.297999999999998 0.0 0.605" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_36_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="15.597999999999999 0.0 0.495" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_37_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="15.897999999999998 0.0 0.385" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_38_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="16.197999999999997 0.0 0.27499999999999997" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_39_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="16.497999999999998 0.0 0.16499999999999998" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_40_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="16.798 0.0 0.05499999999999994" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_41_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="17.448 0.0 0.055" type="box" size="0.5 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_42_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="18.096999999999998 0.0 0.07" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_43_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="18.397 0.0 0.21000000000000002" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_44_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="18.696999999999996 0.0 0.35000000000000003" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_45_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="18.996999999999996 0.0 0.49000000000000005" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_46_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="19.296999999999997 0.0 0.6300000000000001" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_47_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="19.596999999999998 0.0 0.77" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_48_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="20.246999999999996 0.0 0.9100000000000001" type="box" size="0.5 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_49_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="20.897 0.0 0.77" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_50_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="21.196999999999996 0.0 0.63" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_51_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="21.496999999999996 0.0 0.49" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_52_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="21.796999999999997 0.0 0.35" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_53_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="22.096999999999998 0.0 0.20999999999999996" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_54_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="22.397 0.0 0.06999999999999995" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_55_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="23.046999999999997 0.0 0.07" type="box" size="0.5 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_56_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="23.695999999999998 0.0 0.085" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_57_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="23.996 0.0 0.255" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_58_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="24.295999999999996 0.0 0.42500000000000004" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_59_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="24.595999999999997 0.0 0.5950000000000001" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_60_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="24.895999999999997 0.0 0.765" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_61_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="25.195999999999998 0.0 0.935" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_62_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="25.845999999999997 0.0 1.105" type="box" size="0.5 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_63_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="26.495999999999995 0.0 0.935" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_64_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="26.795999999999996 0.0 0.765" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_65_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="27.095999999999997 0.0 0.595" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_66_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="27.395999999999997 0.0 0.42500000000000004" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_67_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="27.695999999999998 0.0 0.255" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_68_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="27.995999999999995 0.0 0.08499999999999996" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_69_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="28.645999999999997 0.0 0.085" type="box" size="0.5 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_70_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="29.294999999999998 0.0 0.1" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_71_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="29.595 0.0 0.30000000000000004" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_72_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="29.894999999999996 0.0 0.5" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_73_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="30.194999999999997 0.0 0.7000000000000001" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_74_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="30.494999999999997 0.0 0.9" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_75_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="30.794999999999998 0.0 1.1" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_76_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="31.444999999999997 0.0 1.3000000000000003" type="box" size="0.5 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_77_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="32.095 0.0 1.1" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_78_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="32.394999999999996 0.0 0.9000000000000001" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_79_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="32.695 0.0 0.7000000000000001" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_80_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="32.995 0.0 0.5" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_81_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="33.294999999999995 0.0 0.30000000000000004" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_82_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="33.595 0.0 0.10000000000000009" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_83_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="34.245 0.0 0.1" type="box" size="0.5 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_84_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="34.89399999999999 0.0 0.115" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_85_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="35.193999999999996 0.0 0.34500000000000003" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_86_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="35.49399999999999 0.0 0.5750000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_87_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="35.794 0.0 0.805" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_88_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="36.093999999999994 0.0 1.0350000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_89_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="36.39399999999999 0.0 1.2650000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_90_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="37.044 0.0 1.495" type="box" size="0.5 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_91_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="37.693999999999996 0.0 1.2650000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_92_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="37.99399999999999 0.0 1.0350000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_93_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="38.294 0.0 0.8050000000000002" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_94_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="38.593999999999994 0.0 0.5750000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_95_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="38.89399999999999 0.0 0.3450000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_96_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="39.193999999999996 0.0 0.11499999999999999" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_97_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="39.843999999999994 0.0 0.115" type="box" size="0.5 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_98_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="40.49299999999999 0.0 0.13" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_99_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="40.79299999999999 0.0 0.39" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_100_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="41.09299999999999 0.0 0.65" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_101_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="41.392999999999994 0.0 0.91" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_102_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="41.69299999999999 0.0 1.17" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_103_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="41.99299999999999 0.0 1.4300000000000002" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_104_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="42.642999999999994 0.0 1.69" type="box" size="0.5 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_105_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="43.29299999999999 0.0 1.4300000000000002" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_106_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="43.59299999999999 0.0 1.1700000000000002" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_107_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="43.892999999999994 0.0 0.9100000000000001" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_108_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="44.19299999999999 0.0 0.6500000000000001" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_109_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="44.49299999999999 0.0 0.3900000000000001" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_110_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="44.79299999999999 0.0 0.13000000000000012" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_111_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="45.44299999999999 0.0 0.13" type="box" size="0.5 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_112_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="46.091999999999985 0.0 0.145" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_113_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="46.39199999999999 0.0 0.43499999999999994" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_114_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="46.691999999999986 0.0 0.725" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_115_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="46.99199999999999 0.0 1.015" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_116_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="47.29199999999999 0.0 1.305" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_117_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="47.591999999999985 0.0 1.595" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_118_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="48.24199999999999 0.0 1.8849999999999998" type="box" size="0.5 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_119_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="48.89199999999999 0.0 1.5949999999999998" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_120_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="49.191999999999986 0.0 1.3049999999999997" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_121_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="49.49199999999999 0.0 1.0149999999999997" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_122_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="49.79199999999999 0.0 0.7249999999999999" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_123_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="50.091999999999985 0.0 0.43499999999999983" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_124_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="50.39199999999999 0.0 0.1449999999999998" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_125_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="51.04199999999999 0.0 0.145" type="box" size="0.5 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_126_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="51.69099999999998 0.0 0.16" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_127_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="51.990999999999985 0.0 0.48" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_128_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="52.29099999999998 0.0 0.8" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_129_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="52.59099999999999 0.0 1.12" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_130_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="52.890999999999984 0.0 1.44" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_131_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="53.19099999999998 0.0 1.76" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_132_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="53.84099999999999 0.0 2.08" type="box" size="0.5 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_133_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="54.490999999999985 0.0 1.76" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_134_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="54.79099999999998 0.0 1.44" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_135_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="55.09099999999999 0.0 1.12" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_136_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="55.390999999999984 0.0 0.8" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_137_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="55.69099999999998 0.0 0.48" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_138_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="55.990999999999985 0.0 0.15999999999999992" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_139_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="56.640999999999984 0.0 0.16" type="box" size="0.5 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_140_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="57.28999999999998 0.0 0.175" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_141_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="57.58999999999998 0.0 0.5249999999999999" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_142_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="57.88999999999998 0.0 0.875" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_143_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="58.18999999999998 0.0 1.2249999999999999" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_144_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="58.48999999999998 0.0 1.575" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_145_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="58.78999999999998 0.0 1.9249999999999998" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_146_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="59.43999999999998 0.0 2.2749999999999995" type="box" size="0.5 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_147_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="60.08999999999998 0.0 1.9249999999999996" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_148_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="60.38999999999998 0.0 1.5749999999999997" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_149_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="60.68999999999998 0.0 1.2249999999999996" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_150_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="60.98999999999998 0.0 0.8749999999999998" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_151_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="61.28999999999998 0.0 0.5249999999999997" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_152_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="61.58999999999998 0.0 0.1749999999999996" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_153_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="62.23999999999998 0.0 0.175" type="box" size="0.5 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_154_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="62.888999999999974 0.0 0.19" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_155_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="63.18899999999998 0.0 0.5700000000000001" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_156_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="63.488999999999976 0.0 0.95" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_157_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="63.78899999999998 0.0 1.33" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_158_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="64.08899999999997 0.0 1.71" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_159_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="64.38899999999998 0.0 2.09" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_160_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="65.03899999999997 0.0 2.47" type="box" size="0.5 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_161_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="65.68899999999998 0.0 2.0900000000000003" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_162_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="65.98899999999998 0.0 1.7100000000000004" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_163_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="66.28899999999997 0.0 1.3300000000000003" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_164_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="66.58899999999997 0.0 0.9500000000000002" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_165_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="66.88899999999998 0.0 0.5700000000000003" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_166_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="67.18899999999998 0.0 0.1900000000000004" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_167_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom pos="67.83899999999997 0.0 0.19" type="box" size="0.5 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_168_collision" group="3" contype="1" conaffinity="1" rgba="0.2 0.8 0.3 0.001" />
+    <geom name="go2_rl_stairs_0_visual" size="0 0 0.05" type="plane" material="groundplane" group="1" contype="0" conaffinity="0" />
+    <geom pos="1.3 0.0 0.025" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_1_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="1.6 0.0 0.07500000000000001" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_2_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="1.9 0.0 0.125" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_3_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="2.2 0.0 0.17500000000000002" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_4_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="2.5 0.0 0.225" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_5_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="2.8 0.0 0.275" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_6_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="3.4499999999999997 0.0 0.32500000000000007" type="box" size="0.5 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_7_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="4.1 0.0 0.275" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_8_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="4.3999999999999995 0.0 0.22500000000000003" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_9_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="4.699999999999999 0.0 0.17500000000000002" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_10_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="5.0 0.0 0.125" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_11_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="5.3 0.0 0.07500000000000001" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_12_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="5.6 0.0 0.025000000000000022" type="box" size="0.15 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_13_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="6.25 0.0 0.025" type="box" size="0.5 0.75 0.025" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_14_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="6.898999999999999 0.0 0.04" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_15_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="7.198999999999999 0.0 0.12" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_16_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="7.498999999999999 0.0 0.2" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_17_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="7.7989999999999995 0.0 0.28" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_18_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="8.099 0.0 0.36" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_19_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="8.399 0.0 0.44" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_20_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="9.049 0.0 0.52" type="box" size="0.5 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_21_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="9.698999999999998 0.0 0.44" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_22_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="9.998999999999999 0.0 0.36" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_23_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="10.299 0.0 0.28" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_24_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="10.598999999999998 0.0 0.2" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_25_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="10.899 0.0 0.12" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_26_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="11.198999999999998 0.0 0.03999999999999998" type="box" size="0.15 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_27_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="11.849 0.0 0.04" type="box" size="0.5 0.75 0.04" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_28_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="12.498 0.0 0.055" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_29_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="12.797999999999998 0.0 0.165" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_30_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="13.097999999999999 0.0 0.275" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_31_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="13.397999999999998 0.0 0.385" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_32_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="13.697999999999999 0.0 0.495" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_33_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="13.997999999999998 0.0 0.605" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_34_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="14.647999999999998 0.0 0.7150000000000001" type="box" size="0.5 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_35_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="15.297999999999998 0.0 0.605" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_36_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="15.597999999999999 0.0 0.495" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_37_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="15.897999999999998 0.0 0.385" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_38_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="16.197999999999997 0.0 0.27499999999999997" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_39_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="16.497999999999998 0.0 0.16499999999999998" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_40_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="16.798 0.0 0.05499999999999994" type="box" size="0.15 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_41_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="17.448 0.0 0.055" type="box" size="0.5 0.75 0.055" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_42_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="18.096999999999998 0.0 0.07" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_43_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="18.397 0.0 0.21000000000000002" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_44_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="18.696999999999996 0.0 0.35000000000000003" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_45_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="18.996999999999996 0.0 0.49000000000000005" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_46_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="19.296999999999997 0.0 0.6300000000000001" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_47_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="19.596999999999998 0.0 0.77" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_48_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="20.246999999999996 0.0 0.9100000000000001" type="box" size="0.5 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_49_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="20.897 0.0 0.77" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_50_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="21.196999999999996 0.0 0.63" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_51_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="21.496999999999996 0.0 0.49" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_52_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="21.796999999999997 0.0 0.35" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_53_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="22.096999999999998 0.0 0.20999999999999996" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_54_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="22.397 0.0 0.06999999999999995" type="box" size="0.15 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_55_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="23.046999999999997 0.0 0.07" type="box" size="0.5 0.75 0.07" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_56_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="23.695999999999998 0.0 0.085" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_57_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="23.996 0.0 0.255" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_58_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="24.295999999999996 0.0 0.42500000000000004" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_59_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="24.595999999999997 0.0 0.5950000000000001" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_60_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="24.895999999999997 0.0 0.765" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_61_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="25.195999999999998 0.0 0.935" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_62_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="25.845999999999997 0.0 1.105" type="box" size="0.5 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_63_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="26.495999999999995 0.0 0.935" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_64_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="26.795999999999996 0.0 0.765" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_65_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="27.095999999999997 0.0 0.595" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_66_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="27.395999999999997 0.0 0.42500000000000004" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_67_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="27.695999999999998 0.0 0.255" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_68_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="27.995999999999995 0.0 0.08499999999999996" type="box" size="0.15 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_69_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="28.645999999999997 0.0 0.085" type="box" size="0.5 0.75 0.085" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_70_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="29.294999999999998 0.0 0.1" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_71_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="29.595 0.0 0.30000000000000004" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_72_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="29.894999999999996 0.0 0.5" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_73_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="30.194999999999997 0.0 0.7000000000000001" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_74_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="30.494999999999997 0.0 0.9" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_75_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="30.794999999999998 0.0 1.1" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_76_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="31.444999999999997 0.0 1.3000000000000003" type="box" size="0.5 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_77_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="32.095 0.0 1.1" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_78_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="32.394999999999996 0.0 0.9000000000000001" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_79_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="32.695 0.0 0.7000000000000001" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_80_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="32.995 0.0 0.5" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_81_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="33.294999999999995 0.0 0.30000000000000004" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_82_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="33.595 0.0 0.10000000000000009" type="box" size="0.15 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_83_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="34.245 0.0 0.1" type="box" size="0.5 0.75 0.1" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_84_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="34.89399999999999 0.0 0.115" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_85_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="35.193999999999996 0.0 0.34500000000000003" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_86_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="35.49399999999999 0.0 0.5750000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_87_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="35.794 0.0 0.805" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_88_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="36.093999999999994 0.0 1.0350000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_89_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="36.39399999999999 0.0 1.2650000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_90_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="37.044 0.0 1.495" type="box" size="0.5 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_91_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="37.693999999999996 0.0 1.2650000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_92_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="37.99399999999999 0.0 1.0350000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_93_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="38.294 0.0 0.8050000000000002" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_94_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="38.593999999999994 0.0 0.5750000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_95_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="38.89399999999999 0.0 0.3450000000000001" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_96_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="39.193999999999996 0.0 0.11499999999999999" type="box" size="0.15 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_97_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="39.843999999999994 0.0 0.115" type="box" size="0.5 0.75 0.115" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_98_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="40.49299999999999 0.0 0.13" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_99_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="40.79299999999999 0.0 0.39" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_100_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="41.09299999999999 0.0 0.65" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_101_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="41.392999999999994 0.0 0.91" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_102_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="41.69299999999999 0.0 1.17" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_103_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="41.99299999999999 0.0 1.4300000000000002" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_104_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="42.642999999999994 0.0 1.69" type="box" size="0.5 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_105_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="43.29299999999999 0.0 1.4300000000000002" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_106_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="43.59299999999999 0.0 1.1700000000000002" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_107_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="43.892999999999994 0.0 0.9100000000000001" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_108_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="44.19299999999999 0.0 0.6500000000000001" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_109_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="44.49299999999999 0.0 0.3900000000000001" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_110_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="44.79299999999999 0.0 0.13000000000000012" type="box" size="0.15 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_111_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="45.44299999999999 0.0 0.13" type="box" size="0.5 0.75 0.13" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_112_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="46.091999999999985 0.0 0.145" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_113_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="46.39199999999999 0.0 0.43499999999999994" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_114_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="46.691999999999986 0.0 0.725" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_115_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="46.99199999999999 0.0 1.015" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_116_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="47.29199999999999 0.0 1.305" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_117_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="47.591999999999985 0.0 1.595" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_118_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="48.24199999999999 0.0 1.8849999999999998" type="box" size="0.5 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_119_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="48.89199999999999 0.0 1.5949999999999998" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_120_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="49.191999999999986 0.0 1.3049999999999997" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_121_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="49.49199999999999 0.0 1.0149999999999997" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_122_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="49.79199999999999 0.0 0.7249999999999999" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_123_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="50.091999999999985 0.0 0.43499999999999983" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_124_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="50.39199999999999 0.0 0.1449999999999998" type="box" size="0.15 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_125_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="51.04199999999999 0.0 0.145" type="box" size="0.5 0.75 0.145" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_126_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="51.69099999999998 0.0 0.16" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_127_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="51.990999999999985 0.0 0.48" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_128_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="52.29099999999998 0.0 0.8" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_129_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="52.59099999999999 0.0 1.12" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_130_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="52.890999999999984 0.0 1.44" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_131_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="53.19099999999998 0.0 1.76" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_132_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="53.84099999999999 0.0 2.08" type="box" size="0.5 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_133_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="54.490999999999985 0.0 1.76" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_134_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="54.79099999999998 0.0 1.44" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_135_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="55.09099999999999 0.0 1.12" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_136_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="55.390999999999984 0.0 0.8" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_137_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="55.69099999999998 0.0 0.48" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_138_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="55.990999999999985 0.0 0.15999999999999992" type="box" size="0.15 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_139_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="56.640999999999984 0.0 0.16" type="box" size="0.5 0.75 0.16" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_140_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="57.28999999999998 0.0 0.175" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_141_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="57.58999999999998 0.0 0.5249999999999999" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_142_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="57.88999999999998 0.0 0.875" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_143_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="58.18999999999998 0.0 1.2249999999999999" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_144_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="58.48999999999998 0.0 1.575" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_145_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="58.78999999999998 0.0 1.9249999999999998" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_146_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="59.43999999999998 0.0 2.2749999999999995" type="box" size="0.5 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_147_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="60.08999999999998 0.0 1.9249999999999996" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_148_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="60.38999999999998 0.0 1.5749999999999997" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_149_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="60.68999999999998 0.0 1.2249999999999996" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_150_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="60.98999999999998 0.0 0.8749999999999998" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_151_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="61.28999999999998 0.0 0.5249999999999997" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_152_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="61.58999999999998 0.0 0.1749999999999996" type="box" size="0.15 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_153_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="62.23999999999998 0.0 0.175" type="box" size="0.5 0.75 0.175" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_154_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="62.888999999999974 0.0 0.19" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_155_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="63.18899999999998 0.0 0.5700000000000001" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_156_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="63.488999999999976 0.0 0.95" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_157_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="63.78899999999998 0.0 1.33" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_158_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="64.08899999999997 0.0 1.71" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_159_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="64.38899999999998 0.0 2.09" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_160_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="65.03899999999997 0.0 2.47" type="box" size="0.5 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_161_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="65.68899999999998 0.0 2.0900000000000003" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_162_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="65.98899999999998 0.0 1.7100000000000004" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_163_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="66.28899999999997 0.0 1.3300000000000003" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_164_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="66.58899999999997 0.0 0.9500000000000002" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_165_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="66.88899999999998 0.0 0.5700000000000003" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_166_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="67.18899999999998 0.0 0.1900000000000004" type="box" size="0.15 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_167_visual" group="1" contype="0" conaffinity="0" />
+    <geom pos="67.83899999999997 0.0 0.19" type="box" size="0.5 0.75 0.19" quat="1.0 0.0 0.0 0.0" name="go2_rl_stairs_168_visual" group="1" contype="0" conaffinity="0" />
+  </worldbody>
+</mujoco>

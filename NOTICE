@@ -1,21 +1,19 @@
-Go2 Native MuJoCo Robonix integration
-Copyright 2026 Origamii520
+This package reuses the MuJoCo-GS-Web frontend and the locally adapted
+mujoco_robonix simulation integration. The inherited MIT text is retained
+in LICENSE. Newly added Go2 integration code is provided under Apache-2.0
+(LICENSE.Apache-2.0); third-party code and assets retain their original licenses.
 
-Original integration code is licensed under Apache-2.0.
+Unitree Go2 MJCF and meshes: assets/robots/go2/LICENSE.unitree (BSD-3-Clause).
+go2_rl_gym policy: assets/robots/go2/policy/moe_rough/UPSTREAM.md.
+go2_rl_gym courses: each course's LICENSE.upstream and provenance.json.
+SceneSmith example dataset: assets/environments/LICENSE.scenesmith and
+each house's NOTICE.md and provenance.json.
+The multilevel House 191/188 composition retains its SceneSmith attribution and
+generation report under assets/environments/scenesmith_multilevel_house.
 
-The downloaded Unitree Go2 model and meshes come from
-unitreerobotics/unitree_mujoco, commit
-1eb6642e3f3fdfb7fb13a9794fd6a2dd93ea0e7d, BSD-3-Clause.
-The original license is preserved as .runtime/assets/model/LICENSE.
+The deployment-owned floor_transition skill uses MulanPSL-2.0 packaging
+scaffolding derived from syswonder/skill-explore-rbnx; its runtime controller,
+contracts, annotations and tests are specific to this repository.
 
-The Go2 robot_lab policy, configuration, and observation/action conventions
-are from Ziqi Fan's fan-ziqi/rl_sar, commit
-376d42c9b128f963ab08579762d5a216a976ce39, Apache-2.0.
-The original license is preserved as .runtime/assets/policy/LICENSE.
-go2_sim/controller.py implements those observation/action conventions for
-named MuJoCo joints and adds a separately documented yaw feedback adapter.
-No policy weights or vendor model source bytes are changed.
-
-Robonix and its Python API are separately installed dependencies, not vendored
-here. Consult their upstream licenses. This package is a community integration,
-not a claim of Unitree endorsement or proprietary Sport-controller equivalence.
+Robonix services are separate upstream packages fetched by rbnx build;
+their licenses remain authoritative within their own source repositories.

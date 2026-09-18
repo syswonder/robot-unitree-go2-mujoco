@@ -1,0 +1,17 @@
+manifestVersion: 1
+package:
+  name: com.robonix.sim.mid360_lidar
+  version: 0.2.0
+  description: Simulated Livox MID-360 lidar.
+  tags: [primitive, lidar, simulation, mujoco, livox]
+  maintainers:
+    - Chen Yanting <1154270143@qq.com>
+  license: Apache-2.0
+build: bash ../../scripts/build-primitive.sh primitives/lidar
+start: bash ../../scripts/start-primitive.sh primitives/lidar primitives.common.lidar mid360_lidar
+stop: bash ../../scripts/stop-primitive.sh mid360_lidar
+capabilities:
+  - name: robonix/primitive/lidar/lidar
+  - name: robonix/primitive/lidar/lidar3d
+  - name: robonix/primitive/lidar/snapshot
+  - name: robonix/primitive/lidar/driver

@@ -1,0 +1,48 @@
+{
+  "name": "Go2 MoE Rough Terrain",
+  "description": "Blind omnidirectional rough-terrain and stair locomotion with an automatic round trip",
+  "runner": {
+    "module": "runner.js",
+    "export": "Go2MoeRoughPolicyRunner"
+  },
+  "onnx": {
+    "path": "policy.onnx",
+    "input_name": "history",
+    "output_name": "actions"
+  },
+  "control_type": "joint_position",
+  "control_dt": 0.02,
+  "policy_joint_names": [
+    "FL_hip_joint", "FL_thigh_joint", "FL_calf_joint",
+    "FR_hip_joint", "FR_thigh_joint", "FR_calf_joint",
+    "RL_hip_joint", "RL_thigh_joint", "RL_calf_joint",
+    "RR_hip_joint", "RR_thigh_joint", "RR_calf_joint"
+  ],
+  "default_joint_pos": [
+    0.1, 0.8, -1.5,
+    -0.1, 0.8, -1.5,
+    0.1, 1.0, -1.5,
+    -0.1, 1.0, -1.5
+  ],
+  "stiffness": 20.0,
+  "damping": 0.5,
+  "action_scale": 0.25,
+  "moe_rough": {
+    "command": {
+      "forward_speed": 0.6,
+      "lateral_speed": 0.35,
+      "yaw_rate": 0.6
+    },
+    "automatic_route": {
+      "near_x": 0.15,
+      "far_x": 7.25,
+      "forward_speed": 0.65,
+      "turn_rate": 0.65,
+      "turn_gain": 1.5,
+      "heading_gain": 1.1,
+      "lateral_gain": 0.3,
+      "maximum_yaw_rate": 0.75,
+      "heading_tolerance": 0.2
+    }
+  }
+}

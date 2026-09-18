@@ -1,10 +1,43 @@
-.runtime/
-.venv/
+# Dependencies and generated frontend output
+/node_modules/
+/build/
+/dist/
+
+# Generated test reports are excluded; test source remains in the repository
+/test-results/
+/playwright-report/
+/coverage/
+
+# Python and tool caches
 __pycache__/
-*.pyc
+*.py[cod]
+.cache/
+.pytest_cache/
+.venv/
+.venv-*/
+**/rbnx-build/
+/rbnx-boot/
+/.runtime/
+
+# Source datasets and conversion intermediates. Runtime SPZ/XML/OBJ/PNG assets
+# under assets/ are not ignored and remain part of the self-contained project.
+/third_party/
+*.tar
+*.tar.gz
+*.tgz
+*.zip
+*.ply
+**/collision_boxes.json
+**/collision_topdown.*
+**/generation_report.json
+**/pipeline.config.used.yaml
+
+# Local configuration and editor/OS files
 .env
-rbnx-build/
-rbnx-boot/
-build/
-install/
-log/
+.env.*
+!.env.example
+.idea/
+.vscode/
+*.log
+.DS_Store
+Thumbs.db

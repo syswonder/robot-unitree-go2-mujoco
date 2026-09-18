@@ -1,0 +1,1400 @@
+{
+  "ok": true,
+  "checks": {
+    "sensors": {
+      "frames": {
+        "scan": "mid360_link",
+        "cloud": "mid360_link",
+        "imu": "imu_link",
+        "rgb": "front_camera_optical_frame",
+        "depth": "front_camera_optical_frame",
+        "info": "front_camera_optical_frame",
+        "odom": "odom",
+        "joints": "base_link"
+      },
+      "stamp_skew_s": 0.049999999999954525,
+      "front_rgb": {
+        "spatial_std": 26.781633897599672,
+        "width": 320,
+        "height": 240
+      },
+      "front_depth": {
+        "valid": 75768,
+        "min_m": 0.7207712531089783,
+        "max_m": 2.9828391075134277
+      },
+      "cloud": {
+        "points": 1346,
+        "valid": 1346
+      },
+      "leg_joints": [
+        "FL_hip_joint",
+        "FL_thigh_joint",
+        "FL_calf_joint",
+        "FR_hip_joint",
+        "FR_thigh_joint",
+        "FR_calf_joint",
+        "RL_hip_joint",
+        "RL_thigh_joint",
+        "RL_calf_joint",
+        "RR_hip_joint",
+        "RR_thigh_joint",
+        "RR_calf_joint"
+      ]
+    },
+    "stack": {
+      "liaison": "ACTIVE",
+      "front_camera": "ACTIVE",
+      "scene": "ACTIVE",
+      "mid360_imu": "ACTIVE",
+      "go2_chassis": "ACTIVE",
+      "mapping": "ACTIVE",
+      "nav2": "ACTIVE",
+      "explore": "INACTIVE",
+      "mid360_lidar": "ACTIVE",
+      "soma": "ACTIVE",
+      "executor": "ACTIVE",
+      "pilot": "ACTIVE"
+    },
+    "map": {
+      "free": 7106,
+      "occupied": 397,
+      "map_stamp_s": 624.847999999,
+      "cloud_stamp_s": 622.629999999,
+      "epoch_start_s": 0.0,
+      "known_area_m2": 18.757500559017068,
+      "cloud": {
+        "points": 366,
+        "valid": 366
+      }
+    },
+    "exploration": {
+      "run_id": "exp-c788f189",
+      "duration_s": 150.0,
+      "observed_s": 152.051,
+      "cancel_requested": true,
+      "status": {
+        "known": true,
+        "state": "CANCELED",
+        "area_m2": 26.05250077642501,
+        "frontiers_left": 10,
+        "elapsed_s": 153.61700630187988,
+        "eta_s": -1.0,
+        "detail": "cancel during nav; completed_legs=3"
+      },
+      "observations": [
+        {
+          "observed_s": 0.9,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 0.0,
+          "frontiers_left": -1,
+          "elapsed_s": 0.8910455703735352,
+          "eta_s": -1.0,
+          "detail": "started (area_hint=''); completed_legs=0"
+        },
+        {
+          "observed_s": 2.1,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 2.102377414703369,
+          "eta_s": -1.0,
+          "detail": "started (area_hint=''); completed_legs=0"
+        },
+        {
+          "observed_s": 3.25,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 3.253067970275879,
+          "eta_s": -1.0,
+          "detail": "started (area_hint=''); completed_legs=0"
+        },
+        {
+          "observed_s": 4.5,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 4.464604139328003,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 5.7,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 5.693505048751831,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 6.856,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 6.882934331893921,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 8.0,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 8.026046514511108,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 9.19,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 18,
+          "elapsed_s": 9.186895370483398,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 10.391,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 10,
+          "elapsed_s": 10.37163233757019,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 11.592,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 10,
+          "elapsed_s": 11.596219778060913,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 12.75,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 12.762708187103271,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 13.945,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 10,
+          "elapsed_s": 13.94251298904419,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 15.145,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 9,
+          "elapsed_s": 15.145124197006226,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 16.357,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 9,
+          "elapsed_s": 16.361345291137695,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 17.548,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 10,
+          "elapsed_s": 17.558944702148438,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 18.797,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 9,
+          "elapsed_s": 18.800135612487793,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 19.997,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 11,
+          "elapsed_s": 19.994587898254395,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 21.198,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 12,
+          "elapsed_s": 21.21195387840271,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 22.432,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 11,
+          "elapsed_s": 22.412442922592163,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 23.634,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 11,
+          "elapsed_s": 23.65057396888733,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 24.834,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 10,
+          "elapsed_s": 24.829352140426636,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 26.0,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 9,
+          "elapsed_s": 26.019295692443848,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 27.187,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 10,
+          "elapsed_s": 27.198171138763428,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 28.436,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 28.451541423797607,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 29.65,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 29.64753556251526,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 30.85,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 30.84299325942993,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 32.101,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 32.10349082946777,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 33.301,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 33.29886531829834,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 34.538,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 34.55596661567688,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 35.736,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 35.747556924819946,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 36.94,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 36.97128367424011,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (3.64,1.45) size=98, 8 clusters left; completed_legs=0"
+        },
+        {
+          "observed_s": 38.123,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 38.113608837127686,
+          "eta_s": -1.0,
+          "detail": "frontier reached (3.64,1.45); completed_legs=1; completed_legs=1"
+        },
+        {
+          "observed_s": 39.274,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 17.76500052943826,
+          "frontiers_left": 8,
+          "elapsed_s": 39.27950382232666,
+          "eta_s": -1.0,
+          "detail": "frontier reached (3.64,1.45); completed_legs=1; completed_legs=1"
+        },
+        {
+          "observed_s": 40.5,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 8,
+          "elapsed_s": 40.49262523651123,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 41.73,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 14,
+          "elapsed_s": 41.706369400024414,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 42.945,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 14,
+          "elapsed_s": 42.95437169075012,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 44.145,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 12,
+          "elapsed_s": 44.15648913383484,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 45.341,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 12,
+          "elapsed_s": 45.325443506240845,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 46.579,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 12,
+          "elapsed_s": 46.56171798706055,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 47.779,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 12,
+          "elapsed_s": 47.77165961265564,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 48.995,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 12,
+          "elapsed_s": 49.00268793106079,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 50.195,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 13,
+          "elapsed_s": 50.190863609313965,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 51.395,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 13,
+          "elapsed_s": 51.40673637390137,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 52.645,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 13,
+          "elapsed_s": 52.63635849952698,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 53.85,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 13,
+          "elapsed_s": 53.8499116897583,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 55.05,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 12,
+          "elapsed_s": 55.0666139125824,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 56.3,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 12,
+          "elapsed_s": 56.30114245414734,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 57.495,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 13,
+          "elapsed_s": 57.50258755683899,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 58.74,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 14,
+          "elapsed_s": 58.72185802459717,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 59.937,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 14,
+          "elapsed_s": 59.93094301223755,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 61.143,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 14,
+          "elapsed_s": 61.15102171897888,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 62.345,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 14,
+          "elapsed_s": 62.35063624382019,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (2.39,2.90) size=543, 8 clusters left; completed_legs=1"
+        },
+        {
+          "observed_s": 63.54,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 14,
+          "elapsed_s": 63.54718375205994,
+          "eta_s": -1.0,
+          "detail": "frontier reached (2.39,2.90); completed_legs=2; completed_legs=2"
+        },
+        {
+          "observed_s": 64.756,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 24.30500072434545,
+          "frontiers_left": 14,
+          "elapsed_s": 64.7586121559143,
+          "eta_s": -1.0,
+          "detail": "frontier reached (2.39,2.90); completed_legs=2; completed_legs=2"
+        },
+        {
+          "observed_s": 65.954,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 14,
+          "elapsed_s": 65.96712183952332,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 67.15,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 13,
+          "elapsed_s": 67.1576509475708,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 68.35,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 14,
+          "elapsed_s": 68.35654306411743,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 69.554,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 14,
+          "elapsed_s": 69.9964292049408,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 70.762,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 14,
+          "elapsed_s": 71.1961579322815,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 71.991,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 14,
+          "elapsed_s": 72.40619850158691,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 73.241,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 14,
+          "elapsed_s": 73.65523099899292,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 74.479,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 14,
+          "elapsed_s": 74.8823561668396,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 75.741,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 14,
+          "elapsed_s": 76.12787008285522,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 76.881,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 14,
+          "elapsed_s": 77.3097722530365,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 78.014,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 15,
+          "elapsed_s": 78.4596893787384,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 79.14,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 12,
+          "elapsed_s": 79.59634590148926,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 80.341,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 80.76370859146118,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 81.541,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 81.97501230239868,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 82.741,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 83.15164279937744,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 83.949,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 84.38306641578674,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (1.94,1.40) size=22, 14 clusters left; completed_legs=2"
+        },
+        {
+          "observed_s": 85.1,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 85.54045867919922,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=85\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 86.27,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 86.71075558662415,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=85\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 87.45,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 87.86928200721741,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=85\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 88.65,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 89.08532547950745,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=85\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 89.85,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 90.28700613975525,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=85\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 91.0,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 91.45352029800415,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=85\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 92.2,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 92.60954809188843,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=175\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 93.4,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 93.82441854476929,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=175\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 94.6,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 95.03963232040405,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=175\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 95.809,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 96.2492082118988,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=175\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 96.974,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 97.434317111969,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=175\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 98.15,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 98.59633946418762,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=175\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 99.3,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 99.74017548561096,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=175\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 100.5,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 100.92564606666565,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=175\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 101.71,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 102.78772449493408,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=265\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 102.977,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 104.05349445343018,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=265\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 104.21,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 105.27877974510193,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=265\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 105.433,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 106.53409147262573,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=265\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 106.664,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 107.75509405136108,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=265\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 107.847,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 9,
+          "elapsed_s": 108.95664238929749,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=265\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 108.957,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 10,
+          "elapsed_s": 110.0663640499115,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=265\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 110.047,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 10,
+          "elapsed_s": 111.15558862686157,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=355\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 111.15,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 10,
+          "elapsed_s": 112.24438524246216,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=355\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 112.248,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 10,
+          "elapsed_s": 113.34922242164612,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=355\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 113.388,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 10,
+          "elapsed_s": 114.49224829673767,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=355\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 114.618,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 10,
+          "elapsed_s": 115.69934940338135,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=355\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 115.85,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 10,
+          "elapsed_s": 116.92184233665466,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=355\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 117.051,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 10,
+          "elapsed_s": 118.13378882408142,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=355\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 118.218,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 10,
+          "elapsed_s": 119.31504654884338,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=355\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 119.368,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 25.822500769570475,
+          "frontiers_left": 10,
+          "elapsed_s": 120.47505807876587,
+          "eta_s": -1.0,
+          "detail": "sweep at (1.82,1.42) yaw=355\u00b0; completed_legs=3"
+        },
+        {
+          "observed_s": 120.551,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 121.64269208908081,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 121.771,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 122.84303522109985,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 122.951,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 124.04815936088562,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 124.171,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 125.25489354133606,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 125.4,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 126.48486804962158,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 126.59,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 127.69359755516052,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 127.798,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 128.8875515460968,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 128.988,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 130.07991361618042,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 130.192,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 131.27779483795166,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 131.391,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 132.45491528511047,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 132.572,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 133.64763593673706,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 133.781,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 135.35270619392395,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 134.982,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 136.56658911705017,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 136.195,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 137.78996443748474,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 137.395,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 138.97207117080688,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 138.632,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 140.22126841545105,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 139.833,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 141.40517449378967,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 140.946,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 142.53747510910034,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 142.051,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 143.64830660820007,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 143.178,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 144.76620197296143,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 144.382,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 145.94696259498596,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 145.551,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 147.12822031974792,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 146.771,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 148.32647037506104,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 147.996,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 149.5627989768982,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 149.185,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 150.77547001838684,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 150.351,
+          "known": true,
+          "state": "RUNNING",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 151.92294454574585,
+          "eta_s": -1.0,
+          "detail": "driving to frontier (6.19,2.00) size=29, 10 clusters left; completed_legs=3"
+        },
+        {
+          "observed_s": 152.051,
+          "known": true,
+          "state": "CANCELED",
+          "area_m2": 26.05250077642501,
+          "frontiers_left": 10,
+          "elapsed_s": 153.61700630187988,
+          "eta_s": -1.0,
+          "detail": "cancel during nav; completed_legs=3"
+        }
+      ],
+      "activation": {
+        "provider_id": "explore",
+        "state": "ACTIVE",
+        "activated": true,
+        "driver_contract": "robonix/skill/explore/driver"
+      },
+      "before": {
+        "free": 7106,
+        "occupied": 397,
+        "map_stamp_s": 624.847999999,
+        "cloud_stamp_s": 622.629999999,
+        "epoch_start_s": 0.0,
+        "known_area_m2": 18.757500559017068,
+        "cloud": {
+          "points": 366,
+          "valid": 366
+        }
+      },
+      "after": {
+        "free": 10429,
+        "occupied": 1863,
+        "map_stamp_s": 805.733999994,
+        "cloud_stamp_s": 805.733999994,
+        "epoch_start_s": 0.0,
+        "known_area_m2": 30.730000915825375,
+        "cloud": {
+          "points": 3954,
+          "valid": 3954
+        }
+      },
+      "max_displacement_m": 3.0847684502526906,
+      "samples": 4640,
+      "max_tilt_rad": 0.34697373601314835
+    }
+  },
+  "skipped": [
+    "motion",
+    "navigation",
+    "cancellation",
+    "semantic"
+  ],
+  "cleanup_errors": [],
+  "elapsed_s": 157.371
+}

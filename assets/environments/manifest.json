@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 2,
+  "defaultEnvironment": "scenesmith_house_185",
+  "environments": [
+    {
+      "id": "scenesmith_house_185",
+      "label": "SceneSmith House 185 - Mesh",
+      "visualMode": "mesh",
+      "xmlPath": "./assets/environments/scenesmith_house_185/scene.xml",
+      "filesPath": "./assets/environments/scenesmith_house_185/index.json",
+      "spawnPath": "./assets/environments/scenesmith_house_185/spawn.json",
+      "camera": null
+    },
+    {
+      "id": "scenesmith_house_186",
+      "label": "SceneSmith House 186 - Mesh",
+      "visualMode": "mesh",
+      "xmlPath": "./assets/environments/scenesmith_house_186/scene.xml",
+      "filesPath": "./assets/environments/scenesmith_house_186/index.json",
+      "spawnPath": "./assets/environments/scenesmith_house_186/spawn.json",
+      "camera": null
+    },
+    {
+      "id": "go2_rl_stairs",
+      "label": "Go2 Stairs - Mesh",
+      "visualMode": "mesh",
+      "xmlPath": "./assets/environments/go2_rl_stairs/scene.xml",
+      "filesPath": "./assets/environments/go2_rl_stairs/index.json",
+      "spawnPath": "./assets/environments/go2_rl_stairs/spawn.json",
+      "camera": null
+    },
+    {
+      "id": "go2_rl_track",
+      "label": "Go2 Race Track - Mesh",
+      "visualMode": "mesh",
+      "xmlPath": "./assets/environments/go2_rl_track/scene.xml",
+      "filesPath": "./assets/environments/go2_rl_track/index.json",
+      "spawnPath": "./assets/environments/go2_rl_track/spawn.json",
+      "camera": null
+    },
+    {
+      "id": "scenesmith_multilevel_house",
+      "label": "SceneSmith Two-Story House - Mesh",
+      "visualMode": "mesh",
+      "xmlPath": "./assets/environments/scenesmith_multilevel_house/scene.xml",
+      "filesPath": "./assets/environments/scenesmith_multilevel_house/index.json",
+      "spawnPath": "./assets/environments/scenesmith_multilevel_house/spawn.json",
+      "camera": {
+        "position": [-5.3, 1.0, 1.7],
+        "target": [0.0, 0.4, 1.7]
+      },
+      "multiFloorProfile": "./assets/environments/scenesmith_multilevel_house/multifloor.yaml"
+    }
+  ]
+}

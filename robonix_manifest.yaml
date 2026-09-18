@@ -1,30 +1,119 @@
 manifestVersion: 1
-name: robonix-go2-mujoco
+name: mujoco-go2-deploy
+
 catalog:
   name: robonix.robot.unitree.go2_mujoco
-  version: 0.1.0
-  description: Native torque-driven Go2 MuJoCo simulation with Robonix chassis and RGB-D/lidar/IMU capabilities.
-  license: Apache-2.0 AND BSD-3-Clause
+  version: 0.2.0
+  description: Web/native MuJoCo Go2 simulation with exploration and Scene semantic navigation.
+  license: Apache-2.0 AND MIT AND BSD-3-Clause AND MulanPSL-2.0
+  tags: [robot, deploy, simulation, mujoco, go2, mapping, navigation, exploration]
   maintainers:
-    - Origamii520 <zxq13204030517@163.com>
-  tags: [robot, unitree, go2, quadruped, mujoco, simulation, rgbd, lidar]
+    - Chen Yanting <ytchen25@stu.pku.edu.cn>
+
+env:
+  ROS_DOMAIN_ID: "0"
+  RMW_IMPLEMENTATION: rmw_fastrtps_cpp
+  ROBONIX_PILOT_VLM_IDLE_TIMEOUT_SECS: "90"
+  ROBONIX_SIM_CONTAINER: mujoco_go2_sim
+  MAPPING_MAPS_DIR: ${HOME}/.robonix/maps/mujoco-go2
+  SCENE_DATA_DIR: ${HOME}/.robonix/scene/mujoco-go2
+  SCENE_OBJECT_MEMORY_DB: /data/robonix/scene_memory/objects.db
+
 system:
   atlas:
-    listen: 127.0.0.1:54151
-    log: info
+    listen: 0.0.0.0:50051
   executor:
-    listen: 127.0.0.1:54161
-    log: info
+    listen: 127.0.0.1:50061
+  pilot:
+    listen: 127.0.0.1:50071
+    vlm:
+      upstream: ${VLM_BASE_URL}
+      api_key: ${VLM_API_KEY}
+      model: ${VLM_MODEL}
+      api_format: openai
+  liaison:
+    listen: 0.0.0.0:50081
   soma:
-    listen: 127.0.0.1:54191
-    robot_yaml: ./soma.yaml
-    log: info
+    listen: 127.0.0.1:50091
+    robot_yaml: soma.yaml
+  scene:
+    camera_frame: front_camera_optical_frame
+
 primitive:
-  - name: go2_sim_chassis
-    path: ./primitives/go2_sim_chassis
-  - name: go2_sim_lidar
-    path: ./primitives/go2_sim_lidar
-  - name: go2_sim_camera
-    path: ./primitives/go2_sim_camera
-  - name: go2_sim_imu
-    path: ./primitives/go2_sim_imu
+  - name: go2_chassis
+    path: ./primitives/chassis
+    config:
+      odom_topic: /odom
+      command_topic: /cmd_vel
+  - name: mid360_lidar
+    path: ./primitives/lidar
+    config:
+      scan_topic: /scan
+      cloud_topic: /mid360/points
+      sentinel_timeout_s: 90
+  - name: mid360_imu
+    path: ./primitives/imu
+    config:
+      topic: /mid360/imu
+      sentinel_timeout_s: 90
+  - name: front_camera
+    path: ./primitives/front_camera
+    config:
+      rgb_topic: /front/rgb
+      depth_topic: /front/depth
+      info_topic: /front/camera_info
+      extrinsics_topic: /front/extrinsics
+      sentinel_timeout_s: 90
+
+service:
+  - name: mapping
+    url: https://github.com/syswonder/service-map-rbnx
+    branch: main
+    config:
+      use_sim_time: true
+      occupancy_sources: [lidar, depth]
+      rtabmap_inputs: [lidar, rgbd, odom]
+      params_file: config/rtabmap_params.yaml
+      sensor_providers:
+        lidar2d: mid360_lidar
+        lidar3d: mid360_lidar
+        rgb: front_camera
+        depth: front_camera
+        odom: go2_chassis
+  - name: nav2
+    url: https://github.com/syswonder/service-navigation-rbnx
+    branch: main
+    config:
+      params_file: config/nav2_params.yaml
+      use_sim_time: true
+      action_wait_s: 120
+      # Keep the terminal guard inside the 0.15 m Nav2 arrival tolerance.
+      guard_terminal_xy_m: 0.10
+      # Browser physics can need several wall-clock seconds to establish a
+      # measurable low-speed terminal turn without being physically stuck.
+      guard_no_progress_s: 8.0
+      guard_terminal_timeout_s: 30.0
+      dynamic_speed:
+        max_linear_speed_mps: 0.25
+        default_percentage: 80
+        step_percentage: 20
+        min_percentage: 20
+      provider_ids:
+        map: mapping
+        odom: go2_chassis
+        scan: mid360_lidar
+
+skill:
+  - name: explore
+    path: ./skills/explore
+    config:
+      robot_radius_m: 0.4031128874149275
+      approach_distance_m: 0.8
+      failed_goal_radius_m: 0.6
+      failed_goal_ttl_s: 60
+  - name: floor_transition
+    path: ./skills/floor_transition
+    config:
+      profile_file: /scene_profile/multifloor.yaml
+      startup_floor: 1
+      bridge_url: http://127.0.0.1:8766

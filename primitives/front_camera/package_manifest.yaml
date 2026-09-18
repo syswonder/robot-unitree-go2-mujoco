@@ -1,0 +1,20 @@
+manifestVersion: 1
+package:
+  name: com.robonix.sim.go2_front_rgbd
+  version: 0.2.0
+  description: Simulated Go2 front RGB-D camera for Mapping and Scene.
+  tags: [primitive, camera, rgbd, simulation, mujoco, go2]
+  maintainers:
+    - Chen Yanting <1154270143@qq.com>
+  license: Apache-2.0
+build: bash ../../scripts/build-primitive.sh primitives/front_camera
+start: bash ../../scripts/start-primitive.sh primitives/front_camera primitives.common.camera front_camera
+stop: bash ../../scripts/stop-primitive.sh front_camera
+capabilities:
+  - name: robonix/primitive/camera/rgb
+  - name: robonix/primitive/camera/depth
+  - name: robonix/primitive/camera/intrinsics
+  - name: robonix/primitive/camera/extrinsics
+  - name: robonix/primitive/camera/snapshot
+  - name: robonix/primitive/camera/depth_snapshot
+  - name: robonix/primitive/camera/driver

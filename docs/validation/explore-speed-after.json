@@ -1,0 +1,1 @@
+{"available": true, "max_linear_speed_mps": 0.25, "default_percentage": 80.0, "min_percentage": 20.0, "step_percentage": 20.0, "effective_percentage": 80.0, "effective_linear_speed_mps": 0.2, "scope": "session", "run_id": "", "detail": "navigation speed limit is available"}

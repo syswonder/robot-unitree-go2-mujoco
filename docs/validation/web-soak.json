@@ -1,0 +1,677 @@
+{
+  "durationSeconds": 300,
+  "cameraRate": 4.97281527648853,
+  "samples": [
+    {
+      "elapsed": 0.003,
+      "simulationTime": 4.615999999999714,
+      "frames": {
+        "state": 134,
+        "scan": 45,
+        "pointcloud": 45,
+        "camera": 23
+      },
+      "lastFrameAgeSec": 0.007308244705200195
+    },
+    {
+      "elapsed": 5.008,
+      "simulationTime": 9.619999999999882,
+      "frames": {
+        "state": 284,
+        "scan": 95,
+        "pointcloud": 95,
+        "camera": 48
+      },
+      "lastFrameAgeSec": 0.008272171020507812
+    },
+    {
+      "elapsed": 10.012,
+      "simulationTime": 14.622000000001552,
+      "frames": {
+        "state": 434,
+        "scan": 145,
+        "pointcloud": 145,
+        "camera": 73
+      },
+      "lastFrameAgeSec": 0.010373115539550781
+    },
+    {
+      "elapsed": 15.016,
+      "simulationTime": 19.624000000000002,
+      "frames": {
+        "state": 584,
+        "scan": 195,
+        "pointcloud": 195,
+        "camera": 98
+      },
+      "lastFrameAgeSec": 0.009580135345458984
+    },
+    {
+      "elapsed": 20.021,
+      "simulationTime": 24.62799999999723,
+      "frames": {
+        "state": 734,
+        "scan": 245,
+        "pointcloud": 245,
+        "camera": 123
+      },
+      "lastFrameAgeSec": 0.010193586349487305
+    },
+    {
+      "elapsed": 25.025,
+      "simulationTime": 29.629999999994457,
+      "frames": {
+        "state": 884,
+        "scan": 295,
+        "pointcloud": 295,
+        "camera": 148
+      },
+      "lastFrameAgeSec": 0.011419534683227539
+    },
+    {
+      "elapsed": 30.028,
+      "simulationTime": 34.63399999999636,
+      "frames": {
+        "state": 1034,
+        "scan": 345,
+        "pointcloud": 345,
+        "camera": 173
+      },
+      "lastFrameAgeSec": 0.013416051864624023
+    },
+    {
+      "elapsed": 35.035,
+      "simulationTime": 39.636000000002475,
+      "frames": {
+        "state": 1184,
+        "scan": 394,
+        "pointcloud": 394,
+        "camera": 198
+      },
+      "lastFrameAgeSec": 0.017233610153198242
+    },
+    {
+      "elapsed": 40.039,
+      "simulationTime": 44.63800000000859,
+      "frames": {
+        "state": 1334,
+        "scan": 445,
+        "pointcloud": 445,
+        "camera": 223
+      },
+      "lastFrameAgeSec": 0.0012133121490478516
+    },
+    {
+      "elapsed": 45.042,
+      "simulationTime": 49.642000000014704,
+      "frames": {
+        "state": 1484,
+        "scan": 494,
+        "pointcloud": 494,
+        "camera": 248
+      },
+      "lastFrameAgeSec": 0.02091217041015625
+    },
+    {
+      "elapsed": 50.047,
+      "simulationTime": 54.64400000002082,
+      "frames": {
+        "state": 1634,
+        "scan": 544,
+        "pointcloud": 544,
+        "camera": 273
+      },
+      "lastFrameAgeSec": 0.02249002456665039
+    },
+    {
+      "elapsed": 55.052,
+      "simulationTime": 59.64800000002693,
+      "frames": {
+        "state": 1784,
+        "scan": 594,
+        "pointcloud": 594,
+        "camera": 298
+      },
+      "lastFrameAgeSec": 0.02429676055908203
+    },
+    {
+      "elapsed": 60.056,
+      "simulationTime": 64.65000000003073,
+      "frames": {
+        "state": 1934,
+        "scan": 644,
+        "pointcloud": 644,
+        "camera": 323
+      },
+      "lastFrameAgeSec": 0.026090383529663086
+    },
+    {
+      "elapsed": 65.515,
+      "simulationTime": 69.65200000001907,
+      "frames": {
+        "state": 2084,
+        "scan": 694,
+        "pointcloud": 694,
+        "camera": 348
+      },
+      "lastFrameAgeSec": 0.02719902992248535
+    },
+    {
+      "elapsed": 70.52,
+      "simulationTime": 74.65600000000741,
+      "frames": {
+        "state": 2234,
+        "scan": 744,
+        "pointcloud": 744,
+        "camera": 373
+      },
+      "lastFrameAgeSec": 0.02639317512512207
+    },
+    {
+      "elapsed": 75.525,
+      "simulationTime": 79.65799999999575,
+      "frames": {
+        "state": 2384,
+        "scan": 793,
+        "pointcloud": 793,
+        "camera": 398
+      },
+      "lastFrameAgeSec": 0.03139233589172363
+    },
+    {
+      "elapsed": 80.529,
+      "simulationTime": 84.69399999998402,
+      "frames": {
+        "state": 2534,
+        "scan": 843,
+        "pointcloud": 843,
+        "camera": 423
+      },
+      "lastFrameAgeSec": 0.03339862823486328
+    },
+    {
+      "elapsed": 85.533,
+      "simulationTime": 89.69799999997235,
+      "frames": {
+        "state": 2685,
+        "scan": 893,
+        "pointcloud": 893,
+        "camera": 448
+      },
+      "lastFrameAgeSec": 0.000415802001953125
+    },
+    {
+      "elapsed": 90.537,
+      "simulationTime": 94.6999999999607,
+      "frames": {
+        "state": 2835,
+        "scan": 943,
+        "pointcloud": 943,
+        "camera": 473
+      },
+      "lastFrameAgeSec": 0.0019021034240722656
+    },
+    {
+      "elapsed": 95.542,
+      "simulationTime": 99.70199999994904,
+      "frames": {
+        "state": 2985,
+        "scan": 993,
+        "pointcloud": 993,
+        "camera": 498
+      },
+      "lastFrameAgeSec": 0.0034589767456054688
+    },
+    {
+      "elapsed": 100.546,
+      "simulationTime": 104.70599999993738,
+      "frames": {
+        "state": 3135,
+        "scan": 1043,
+        "pointcloud": 1043,
+        "camera": 523
+      },
+      "lastFrameAgeSec": 0.005005359649658203
+    },
+    {
+      "elapsed": 105.549,
+      "simulationTime": 109.70799999992572,
+      "frames": {
+        "state": 3285,
+        "scan": 1093,
+        "pointcloud": 1093,
+        "camera": 548
+      },
+      "lastFrameAgeSec": 0.0037381649017333984
+    },
+    {
+      "elapsed": 110.555,
+      "simulationTime": 114.71199999991406,
+      "frames": {
+        "state": 3434,
+        "scan": 1142,
+        "pointcloud": 1142,
+        "camera": 573
+      },
+      "lastFrameAgeSec": 0.007403850555419922
+    },
+    {
+      "elapsed": 115.56,
+      "simulationTime": 119.7139999999024,
+      "frames": {
+        "state": 3584,
+        "scan": 1192,
+        "pointcloud": 1192,
+        "camera": 598
+      },
+      "lastFrameAgeSec": 0.010036706924438477
+    },
+    {
+      "elapsed": 120.564,
+      "simulationTime": 124.71599999989074,
+      "frames": {
+        "state": 3734,
+        "scan": 1242,
+        "pointcloud": 1242,
+        "camera": 623
+      },
+      "lastFrameAgeSec": 0.012453794479370117
+    },
+    {
+      "elapsed": 125.568,
+      "simulationTime": 129.7199999998913,
+      "frames": {
+        "state": 3884,
+        "scan": 1292,
+        "pointcloud": 1292,
+        "camera": 648
+      },
+      "lastFrameAgeSec": 0.013422966003417969
+    },
+    {
+      "elapsed": 130.572,
+      "simulationTime": 134.72199999991517,
+      "frames": {
+        "state": 4034,
+        "scan": 1342,
+        "pointcloud": 1342,
+        "camera": 673
+      },
+      "lastFrameAgeSec": 0.014312028884887695
+    },
+    {
+      "elapsed": 135.577,
+      "simulationTime": 139.72599999993906,
+      "frames": {
+        "state": 4184,
+        "scan": 1392,
+        "pointcloud": 1392,
+        "camera": 698
+      },
+      "lastFrameAgeSec": 0.014023780822753906
+    },
+    {
+      "elapsed": 140.581,
+      "simulationTime": 144.72799999996295,
+      "frames": {
+        "state": 4334,
+        "scan": 1442,
+        "pointcloud": 1442,
+        "camera": 723
+      },
+      "lastFrameAgeSec": 0.01516580581665039
+    },
+    {
+      "elapsed": 146.087,
+      "simulationTime": 149.72999999998683,
+      "frames": {
+        "state": 4484,
+        "scan": 1492,
+        "pointcloud": 1491,
+        "camera": 748
+      },
+      "lastFrameAgeSec": 0.0004911422729492188
+    },
+    {
+      "elapsed": 151.09,
+      "simulationTime": 154.73400000001072,
+      "frames": {
+        "state": 4634,
+        "scan": 1542,
+        "pointcloud": 1542,
+        "camera": 773
+      },
+      "lastFrameAgeSec": 0.0019252300262451172
+    },
+    {
+      "elapsed": 156.094,
+      "simulationTime": 159.7360000000346,
+      "frames": {
+        "state": 4784,
+        "scan": 1591,
+        "pointcloud": 1591,
+        "camera": 798
+      },
+      "lastFrameAgeSec": 0.022238731384277344
+    },
+    {
+      "elapsed": 161.099,
+      "simulationTime": 164.7400000000585,
+      "frames": {
+        "state": 4934,
+        "scan": 1641,
+        "pointcloud": 1641,
+        "camera": 823
+      },
+      "lastFrameAgeSec": 0.022946596145629883
+    },
+    {
+      "elapsed": 166.103,
+      "simulationTime": 169.74200000008238,
+      "frames": {
+        "state": 5084,
+        "scan": 1691,
+        "pointcloud": 1691,
+        "camera": 848
+      },
+      "lastFrameAgeSec": 0.023646831512451172
+    },
+    {
+      "elapsed": 171.107,
+      "simulationTime": 174.74400000010627,
+      "frames": {
+        "state": 5234,
+        "scan": 1741,
+        "pointcloud": 1741,
+        "camera": 873
+      },
+      "lastFrameAgeSec": 0.02551889419555664
+    },
+    {
+      "elapsed": 176.111,
+      "simulationTime": 179.74800000013016,
+      "frames": {
+        "state": 5384,
+        "scan": 1791,
+        "pointcloud": 1791,
+        "camera": 898
+      },
+      "lastFrameAgeSec": 0.008893489837646484
+    },
+    {
+      "elapsed": 181.114,
+      "simulationTime": 184.75000000015405,
+      "frames": {
+        "state": 5534,
+        "scan": 1841,
+        "pointcloud": 1841,
+        "camera": 923
+      },
+      "lastFrameAgeSec": 0.008314847946166992
+    },
+    {
+      "elapsed": 186.118,
+      "simulationTime": 189.75400000017794,
+      "frames": {
+        "state": 5684,
+        "scan": 1890,
+        "pointcloud": 1890,
+        "camera": 948
+      },
+      "lastFrameAgeSec": 0.02821946144104004
+    },
+    {
+      "elapsed": 191.122,
+      "simulationTime": 194.75600000020182,
+      "frames": {
+        "state": 5834,
+        "scan": 1940,
+        "pointcloud": 1940,
+        "camera": 973
+      },
+      "lastFrameAgeSec": 0.030124664306640625
+    },
+    {
+      "elapsed": 196.126,
+      "simulationTime": 199.7580000002257,
+      "frames": {
+        "state": 5984,
+        "scan": 1990,
+        "pointcloud": 1990,
+        "camera": 998
+      },
+      "lastFrameAgeSec": 0.031363725662231445
+    },
+    {
+      "elapsed": 201.13,
+      "simulationTime": 204.7620000002496,
+      "frames": {
+        "state": 6134,
+        "scan": 2040,
+        "pointcloud": 2040,
+        "camera": 1023
+      },
+      "lastFrameAgeSec": 0.03211688995361328
+    },
+    {
+      "elapsed": 206.134,
+      "simulationTime": 209.79800000027365,
+      "frames": {
+        "state": 6285,
+        "scan": 2090,
+        "pointcloud": 2090,
+        "camera": 1048
+      },
+      "lastFrameAgeSec": 0.00043487548828125
+    },
+    {
+      "elapsed": 211.14,
+      "simulationTime": 214.78400000029745,
+      "frames": {
+        "state": 6434,
+        "scan": 2140,
+        "pointcloud": 2140,
+        "camera": 1073
+      },
+      "lastFrameAgeSec": 0.018329620361328125
+    },
+    {
+      "elapsed": 216.144,
+      "simulationTime": 219.78600000032134,
+      "frames": {
+        "state": 6584,
+        "scan": 2190,
+        "pointcloud": 2190,
+        "camera": 1098
+      },
+      "lastFrameAgeSec": 0.021413087844848633
+    },
+    {
+      "elapsed": 221.148,
+      "simulationTime": 224.79000000034523,
+      "frames": {
+        "state": 6734,
+        "scan": 2240,
+        "pointcloud": 2240,
+        "camera": 1123
+      },
+      "lastFrameAgeSec": 0.022104740142822266
+    },
+    {
+      "elapsed": 226.151,
+      "simulationTime": 229.79200000036911,
+      "frames": {
+        "state": 6884,
+        "scan": 2290,
+        "pointcloud": 2290,
+        "camera": 1148
+      },
+      "lastFrameAgeSec": 0.022470712661743164
+    },
+    {
+      "elapsed": 231.155,
+      "simulationTime": 234.796000000393,
+      "frames": {
+        "state": 7034,
+        "scan": 2340,
+        "pointcloud": 2340,
+        "camera": 1173
+      },
+      "lastFrameAgeSec": 0.024259090423583984
+    },
+    {
+      "elapsed": 236.159,
+      "simulationTime": 239.7980000004169,
+      "frames": {
+        "state": 7184,
+        "scan": 2390,
+        "pointcloud": 2390,
+        "camera": 1198
+      },
+      "lastFrameAgeSec": 0.02493453025817871
+    },
+    {
+      "elapsed": 241.163,
+      "simulationTime": 244.80000000044078,
+      "frames": {
+        "state": 7334,
+        "scan": 2440,
+        "pointcloud": 2440,
+        "camera": 1223
+      },
+      "lastFrameAgeSec": 0.026110410690307617
+    },
+    {
+      "elapsed": 246.594,
+      "simulationTime": 249.80400000046467,
+      "frames": {
+        "state": 7484,
+        "scan": 2490,
+        "pointcloud": 2490,
+        "camera": 1248
+      },
+      "lastFrameAgeSec": 0.02497386932373047
+    },
+    {
+      "elapsed": 251.599,
+      "simulationTime": 254.80600000048855,
+      "frames": {
+        "state": 7634,
+        "scan": 2540,
+        "pointcloud": 2540,
+        "camera": 1273
+      },
+      "lastFrameAgeSec": 0.010293960571289062
+    },
+    {
+      "elapsed": 256.602,
+      "simulationTime": 259.81000000051245,
+      "frames": {
+        "state": 7784,
+        "scan": 2590,
+        "pointcloud": 2590,
+        "camera": 1298
+      },
+      "lastFrameAgeSec": 0.010942459106445312
+    },
+    {
+      "elapsed": 261.607,
+      "simulationTime": 264.81200000053633,
+      "frames": {
+        "state": 7934,
+        "scan": 2640,
+        "pointcloud": 2640,
+        "camera": 1323
+      },
+      "lastFrameAgeSec": 0.01173853874206543
+    },
+    {
+      "elapsed": 266.611,
+      "simulationTime": 269.8480000005604,
+      "frames": {
+        "state": 8085,
+        "scan": 2690,
+        "pointcloud": 2690,
+        "camera": 1348
+      },
+      "lastFrameAgeSec": 0.0001480579376220703
+    },
+    {
+      "elapsed": 271.615,
+      "simulationTime": 274.85200000058427,
+      "frames": {
+        "state": 8235,
+        "scan": 2739,
+        "pointcloud": 2739,
+        "camera": 1373
+      },
+      "lastFrameAgeSec": 0.00038361549377441406
+    },
+    {
+      "elapsed": 276.619,
+      "simulationTime": 279.85400000060815,
+      "frames": {
+        "state": 8385,
+        "scan": 2789,
+        "pointcloud": 2789,
+        "camera": 1398
+      },
+      "lastFrameAgeSec": 0.0014879703521728516
+    },
+    {
+      "elapsed": 281.623,
+      "simulationTime": 284.85600000063204,
+      "frames": {
+        "state": 8535,
+        "scan": 2839,
+        "pointcloud": 2839,
+        "camera": 1423
+      },
+      "lastFrameAgeSec": 0.003320932388305664
+    },
+    {
+      "elapsed": 286.627,
+      "simulationTime": 289.86000000065593,
+      "frames": {
+        "state": 8685,
+        "scan": 2889,
+        "pointcloud": 2889,
+        "camera": 1448
+      },
+      "lastFrameAgeSec": 0.0048253536224365234
+    },
+    {
+      "elapsed": 291.631,
+      "simulationTime": 294.8620000006798,
+      "frames": {
+        "state": 8835,
+        "scan": 2939,
+        "pointcloud": 2939,
+        "camera": 1473
+      },
+      "lastFrameAgeSec": 0.005469322204589844
+    },
+    {
+      "elapsed": 296.636,
+      "simulationTime": 299.8640000007037,
+      "frames": {
+        "state": 8985,
+        "scan": 2989,
+        "pointcloud": 2989,
+        "camera": 1498
+      },
+      "lastFrameAgeSec": 0.00709080696105957
+    },
+    {
+      "elapsed": 301.64,
+      "simulationTime": 304.8540000007275,
+      "frames": {
+        "state": 9134,
+        "scan": 3039,
+        "pointcloud": 3039,
+        "camera": 1523
+      },
+      "lastFrameAgeSec": 0.009463071823120117
+    }
+  ]
+}

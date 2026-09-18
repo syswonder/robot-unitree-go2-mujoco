@@ -1,0 +1,57 @@
+{
+  "ok": true,
+  "checks": {
+    "sensors": {
+      "frames": {
+        "scan": "mid360_link",
+        "cloud": "mid360_link",
+        "imu": "imu_link",
+        "rgb": "front_camera_optical_frame",
+        "depth": "front_camera_optical_frame",
+        "info": "front_camera_optical_frame",
+        "odom": "odom",
+        "joints": "base_link"
+      },
+      "stamp_skew_s": 0.012000000000000455,
+      "front_rgb": {
+        "spatial_std": 3.603458977906645,
+        "width": 320,
+        "height": 240
+      },
+      "front_depth": {
+        "valid": 76800,
+        "min_m": 0.35149580240249634,
+        "max_m": 0.3521314263343811
+      },
+      "cloud": {
+        "points": 1383,
+        "valid": 1383
+      },
+      "leg_joints": [
+        "FL_hip_joint",
+        "FL_thigh_joint",
+        "FL_calf_joint",
+        "FR_hip_joint",
+        "FR_thigh_joint",
+        "FR_calf_joint",
+        "RL_hip_joint",
+        "RL_thigh_joint",
+        "RL_calf_joint",
+        "RR_hip_joint",
+        "RR_thigh_joint",
+        "RR_calf_joint"
+      ]
+    }
+  },
+  "skipped": [
+    "motion",
+    "navigation",
+    "cancellation",
+    "exploration",
+    "semantic",
+    "stack",
+    "map"
+  ],
+  "cleanup_errors": [],
+  "elapsed_s": 1.318
+}
