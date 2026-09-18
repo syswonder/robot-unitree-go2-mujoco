@@ -8,3 +8,4 @@ rbnx-boot/
 build/
 install/
 log/
+logs/

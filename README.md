@@ -9,6 +9,19 @@ deployment and does not replace it.
 
 ![Actual MuJoCo Go2 rendering](docs/walking-demo.png)
 
+Optional [courtyard and action showcase](docs/courtyard-showcase.md): a campus
+courtyard with collision obstacles, an Atlas/gRPC choreography, torque-driven
+low-hurdle jumping, stairs, ramps, slalom, crouch, bow, dance, and optional
+pretrained backflip/handstand walking. See the guide for policy preparation. Start with
+`bash start.sh --scene courtyard --viewer --follow-camera`; the default room
+remains available. These are simulation actions, not proprietary Unitree sport
+tricks or autonomous navigation.
+
+For other scene owners: [reuse the actions in your scene](docs/reusing-actions.md).
+After building and booting this body package, `bash scripts/action.sh --list`
+lists available actions and `bash scripts/action.sh backflip` invokes one action
+through Atlas/gRPC, without running or resetting the courtyard route.
+
 ## Integration and current acceptance
 
 ```text

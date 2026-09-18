@@ -1,0 +1,1424 @@
+{
+  "transport": "Atlas-discovered gRPC",
+  "scope": "full route",
+  "complete": true,
+  "steps": [
+    {
+      "label": "A区中心 / 左转一周",
+      "command": {
+        "rotate_deg": 360.0
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 8.572374166000031,
+        "position": [
+          -0.03608650133785601,
+          -0.02762941871879848,
+          0.29518578673017776
+        ],
+        "yaw_rad": 0.06612225736965213
+      },
+      "telemetry": {
+        "min_upright": 0.9976133290389824,
+        "max_height_m": 0.32236319736180274,
+        "samples": 56
+      }
+    },
+    {
+      "label": "A区中心 / 右转一周",
+      "command": {
+        "rotate_deg": -360.0
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 8.670534343999975,
+        "position": [
+          -0.022845576402029364,
+          0.0018958739305180846,
+          0.29699200875802534
+        ],
+        "yaw_rad": 0.09656839728036477
+      },
+      "telemetry": {
+        "min_upright": 0.9975309041436713,
+        "max_height_m": 0.3200725660634324,
+        "samples": 57
+      }
+    },
+    {
+      "label": "A区 / 左侧移",
+      "command": {
+        "linear_y": 0.25,
+        "duration_sec": 2.0
+      },
+      "result": {
+        "status": "done",
+        "mode": "velocity",
+        "elapsed_s": 2.018261682000002,
+        "position": [
+          0.000576930751304407,
+          0.34355588122022224,
+          0.3021744733249114
+        ],
+        "yaw_rad": 0.08524333686505281
+      },
+      "telemetry": {
+        "min_upright": 0.9988625676241947,
+        "max_height_m": 0.31463075960691983,
+        "samples": 14
+      }
+    },
+    {
+      "label": "A区 / 右侧移",
+      "command": {
+        "linear_y": -0.25,
+        "duration_sec": 2.0
+      },
+      "result": {
+        "status": "done",
+        "mode": "velocity",
+        "elapsed_s": 2.013093260000005,
+        "position": [
+          0.11127243183056172,
+          0.06439852427715875,
+          0.3182890822783097
+        ],
+        "yaw_rad": 0.07970946936245998
+      },
+      "telemetry": {
+        "min_upright": 0.9983473919051202,
+        "max_height_m": 0.33114088834107214,
+        "samples": 14
+      }
+    },
+    {
+      "label": "A区 / 后退",
+      "command": {
+        "linear_x": -0.3,
+        "duration_sec": 2.0
+      },
+      "result": {
+        "status": "done",
+        "mode": "velocity",
+        "elapsed_s": 2.019825687999969,
+        "position": [
+          -0.19118073948260578,
+          0.026071322134955752,
+          0.30171861067965533
+        ],
+        "yaw_rad": 0.08574558099461399
+      },
+      "telemetry": {
+        "min_upright": 0.9977443573086785,
+        "max_height_m": 0.32548128343802213,
+        "samples": 14
+      }
+    },
+    {
+      "label": "A区 / 返回中心 / 对齐",
+      "command": {
+        "rotate_deg": -12.88263817968272
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 0.9299664540000094,
+        "position": [
+          -0.18535327187521267,
+          0.027019155882559993,
+          0.2974674089899661
+        ],
+        "yaw_rad": -0.09477537056668585
+      },
+      "telemetry": {
+        "min_upright": 0.9988867983046078,
+        "max_height_m": 0.3200699818779898,
+        "samples": 7
+      }
+    },
+    {
+      "label": "A区 / 返回中心 / 行走",
+      "command": {
+        "forward_m": 0.21138002347520402,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 1.3579896140000756,
+        "position": [
+          0.0013486642268665386,
+          0.003974209154621984,
+          0.308503472002209
+        ],
+        "yaw_rad": -0.12586433557866383
+      },
+      "telemetry": {
+        "min_upright": 0.9994829389185546,
+        "max_height_m": 0.31981783597288654,
+        "samples": 9
+      }
+    },
+    {
+      "label": "进入B区 / 对齐",
+      "command": {
+        "rotate_deg": 6.777741637412959
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 0.5077148509999461,
+        "position": [
+          0.01296981659931701,
+          0.01612811411147311,
+          0.2989543208050605
+        ],
+        "yaw_rad": -0.02765921285337149
+      },
+      "telemetry": {
+        "min_upright": 0.9996580034576119,
+        "max_height_m": 0.3075521052826472,
+        "samples": 4
+      }
+    },
+    {
+      "label": "进入B区 / 行走",
+      "command": {
+        "forward_m": 2.6941229252223824,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 7.739605376999975,
+        "position": [
+          2.669710067921153,
+          0.08833008045926243,
+          0.3077306588725735
+        ],
+        "yaw_rad": -0.01806133978306843
+      },
+      "telemetry": {
+        "min_upright": 0.9990973863235576,
+        "max_height_m": 0.3249127448591422,
+        "samples": 51
+      }
+    },
+    {
+      "label": "B区 / 前进到起跳位置",
+      "command": {
+        "forward_m": 1.0496668924509964
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 4.535488308000026,
+        "position": [
+          3.700476086236572,
+          0.06998982571512152,
+          0.3061264036064999
+        ],
+        "yaw_rad": -0.025781008750049524
+      },
+      "telemetry": {
+        "min_upright": 0.998904749857967,
+        "max_height_m": 0.32418284524512464,
+        "samples": 30
+      }
+    },
+    {
+      "label": "B区 / 停稳",
+      "command": {
+        "duration_sec": 2.0
+      },
+      "result": {
+        "status": "done",
+        "mode": "velocity",
+        "elapsed_s": 2.0270858230001068,
+        "position": [
+          3.7008139405551588,
+          0.06759900033329723,
+          0.32321111209779935
+        ],
+        "yaw_rad": -0.029510131122922917
+      },
+      "telemetry": {
+        "min_upright": 0.9996267705679542,
+        "max_height_m": 0.32382430679005947,
+        "samples": 14
+      }
+    },
+    {
+      "label": "B区中心 / 腾空跨栏",
+      "action": "jump",
+      "result": {
+        "id": "26ef6b4ff5044fcba8d30f963553dedc",
+        "name": "jump",
+        "status": "done",
+        "elapsed_s": 4.000000000002046,
+        "max_height_m": 0.4670152924020312,
+        "airborne_s": 0.3650000000000002,
+        "obstacle_contacts": 0,
+        "nonfoot_ground_contacts": 0,
+        "handstand_s": 0.0,
+        "pitch_rotation_rad": 0.0013217610093347021,
+        "initial_foot_x": [
+          3.8979899462113177,
+          3.911469419239148,
+          3.5014396994964216,
+          3.454704842547971
+        ],
+        "displacement_m": [
+          0.631772955981666,
+          -0.007490464342191902,
+          -0.0013009564326686984
+        ],
+        "upright": 0.9999373190836093,
+        "final_foot_x": [
+          4.525242840710987,
+          4.509181960154009,
+          4.162612144335715,
+          4.138787553869408
+        ],
+        "crossed_hurdle": true
+      }
+    },
+    {
+      "label": "B区 / 落地继续前进 / 对齐",
+      "command": {
+        "rotate_deg": -11.097265363688898
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 0.5097536690000197,
+        "position": [
+          4.339460530572803,
+          0.062224968477083115,
+          0.30045911860248137
+        ],
+        "yaw_rad": -0.04320070405532748
+      },
+      "telemetry": {
+        "min_upright": 0.9991630838008094,
+        "max_height_m": 0.3088988799441174,
+        "samples": 4
+      }
+    },
+    {
+      "label": "B区 / 落地继续前进 / 行走",
+      "command": {
+        "forward_m": 1.1667267835353015,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 3.945351974999994,
+        "position": [
+          5.477151696606983,
+          0.03805045657736799,
+          0.3093999252448809
+        ],
+        "yaw_rad": -0.06769961993906992
+      },
+      "telemetry": {
+        "min_upright": 0.9989289445629784,
+        "max_height_m": 0.3258215648386916,
+        "samples": 26
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 1 / 对齐",
+      "command": {
+        "rotate_deg": 91.85547141168679
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 2.6152188759999717,
+        "position": [
+          5.491098097674748,
+          0.17865466317084697,
+          0.2981080862551966
+        ],
+        "yaw_rad": 1.4987018445016733
+      },
+      "telemetry": {
+        "min_upright": 0.9982239941417037,
+        "max_height_m": 0.31910346135808915,
+        "samples": 17
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 1 / 行走",
+      "command": {
+        "forward_m": 3.1645262602074786,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 9.018154391999815,
+        "position": [
+          5.559950040712785,
+          3.319486195051394,
+          0.3084121099631255
+        ],
+        "yaw_rad": 1.501659107153966
+      },
+      "telemetry": {
+        "min_upright": 0.9988371425343174,
+        "max_height_m": 0.3247535711266943,
+        "samples": 59
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 2 / 对齐",
+      "command": {
+        "rotate_deg": 98.15522365212982
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 2.944829759999948,
+        "position": [
+          5.45380554833088,
+          3.299533452075178,
+          0.2995243444164026
+        ],
+        "yaw_rad": -3.077619726148986
+      },
+      "telemetry": {
+        "min_upright": 0.9963043164424229,
+        "max_height_m": 0.32674920265701857,
+        "samples": 20
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 2 / 行走",
+      "command": {
+        "forward_m": 0.9634621416554493,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 3.450176389999797,
+        "position": [
+          4.516817631310625,
+          3.222660420150844,
+          0.307160866366298
+        ],
+        "yaw_rad": -3.063744926865768
+      },
+      "telemetry": {
+        "min_upright": 0.9987202365427927,
+        "max_height_m": 0.3245571839780486,
+        "samples": 23
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 3 / 对齐",
+      "command": {
+        "rotate_deg": -98.80414436156447
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 2.9491082099998494,
+        "position": [
+          4.564510230546126,
+          3.310940157063997,
+          0.30378496650596204
+        ],
+        "yaw_rad": 1.520604194477765
+      },
+      "telemetry": {
+        "min_upright": 0.9985508138492787,
+        "max_height_m": 0.3207718263629452,
+        "samples": 20
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 3 / 行走",
+      "command": {
+        "forward_m": 1.0314374455506206,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 3.5321992879999016,
+        "position": [
+          4.589680025790981,
+          4.31350924013088,
+          0.3055692504640031
+        ],
+        "yaw_rad": 1.5083056955231864
+      },
+      "telemetry": {
+        "min_upright": 0.9989830931796368,
+        "max_height_m": 0.3247761736788077,
+        "samples": 23
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 4 / 对齐",
+      "command": {
+        "rotate_deg": 76.75369537238186
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 2.364981248000049,
+        "position": [
+          4.464569677746251,
+          4.335096532094032,
+          0.2975444225818886
+        ],
+        "yaw_rad": 2.818466073421833
+      },
+      "telemetry": {
+        "min_upright": 0.9983542049343042,
+        "max_height_m": 0.32313872393327997,
+        "samples": 16
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 4 / 行走",
+      "command": {
+        "forward_m": 1.298926980358533,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 4.378377855000053,
+        "position": [
+          3.2620942989453385,
+          4.7471452318510385,
+          0.308696081331138
+        ],
+        "yaw_rad": 2.82749139378132
+      },
+      "telemetry": {
+        "min_upright": 0.9989899381497733,
+        "max_height_m": 0.3230949240606004,
+        "samples": 29
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 5 / 对齐",
+      "command": {
+        "rotate_deg": -52.5625999313998
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 1.8616327060001367,
+        "position": [
+          3.264281933308933,
+          4.7775573706605705,
+          0.29570792706798854
+        ],
+        "yaw_rad": 1.9398186156158317
+      },
+      "telemetry": {
+        "min_upright": 0.9983025480398215,
+        "max_height_m": 0.32072431709251276,
+        "samples": 13
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 5 / 行走",
+      "command": {
+        "forward_m": 0.5850397091156058,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 2.4378903029999037,
+        "position": [
+          3.0706249913903365,
+          5.29398335693082,
+          0.30484019814634616
+        ],
+        "yaw_rad": 1.9266953190867644
+      },
+      "telemetry": {
+        "min_upright": 0.9984763467452098,
+        "max_height_m": 0.3243385717251201,
+        "samples": 16
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 6 / 对齐",
+      "command": {
+        "rotate_deg": -19.139351286400167
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 1.1759848969998075,
+        "position": [
+          3.076171057846828,
+          5.3182410910562865,
+          0.2966435394206866
+        ],
+        "yaw_rad": 1.6218152444382656
+      },
+      "telemetry": {
+        "min_upright": 0.9988943020028083,
+        "max_height_m": 0.31906679747530026,
+        "samples": 8
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 6 / 行走",
+      "command": {
+        "forward_m": 1.3026790480244026,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 4.208197006000091,
+        "position": [
+          3.021057663169734,
+          6.58320803165567,
+          0.30797735560052686
+        ],
+        "yaw_rad": 1.6183574862988537
+      },
+      "telemetry": {
+        "min_upright": 0.9980193858598181,
+        "max_height_m": 0.3248000225588063,
+        "samples": 28
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 7 / 对齐",
+      "command": {
+        "rotate_deg": -87.77016994701683
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 2.6100213800000347,
+        "position": [
+          3.090091656866598,
+          6.572815622315743,
+          0.29503636838953884
+        ],
+        "yaw_rad": 0.1280217374051259
+      },
+      "telemetry": {
+        "min_upright": 0.9968273397756644,
+        "max_height_m": 0.32351402388307954,
+        "samples": 17
+      }
+    },
+    {
+      "label": "C区 / 绕桩路线 7 / 行走",
+      "command": {
+        "forward_m": 1.6386302042741394,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 5.053755100999979,
+        "position": [
+          4.672413847414951,
+          6.836780261235467,
+          0.3070802485808828
+        ],
+        "yaw_rad": 0.11695311969913824
+      },
+      "telemetry": {
+        "min_upright": 0.9983074337619025,
+        "max_height_m": 0.32494692405924813,
+        "samples": 33
+      }
+    },
+    {
+      "label": "前往D区通道 / 对齐",
+      "command": {
+        "rotate_deg": 172.47444730465844
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 4.470841439999958,
+        "position": [
+          4.52921188512524,
+          6.9905669383682865,
+          0.2990443701965051
+        ],
+        "yaw_rad": 3.083979659209943
+      },
+      "telemetry": {
+        "min_upright": 0.9976518160873038,
+        "max_height_m": 0.3222630379120745,
+        "samples": 29
+      }
+    },
+    {
+      "label": "前往D区通道 / 行走",
+      "command": {
+        "forward_m": 3.279156795118322,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 9.365522658000145,
+        "position": [
+          1.2713019558512808,
+          6.975659604700121,
+          0.3083763978375273
+        ],
+        "yaw_rad": 3.1088598564558647
+      },
+      "telemetry": {
+        "min_upright": 0.9983992298677463,
+        "max_height_m": 0.3273471981606395,
+        "samples": 61
+      }
+    },
+    {
+      "label": "D区 / 楼梯中心线入口 / 对齐",
+      "command": {
+        "rotate_deg": 95.87073041705722
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 2.860362268000017,
+        "position": [
+          1.2853050452206791,
+          6.8556217640701345,
+          0.2995136614228503
+        ],
+        "yaw_rad": -1.5358091660080553
+      },
+      "telemetry": {
+        "min_upright": 0.9956417331604834,
+        "max_height_m": 0.3291458579884897,
+        "samples": 19
+      }
+    },
+    {
+      "label": "D区 / 楼梯中心线入口 / 行走",
+      "command": {
+        "forward_m": 1.9791201899672899,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 6.0583520790000875,
+        "position": [
+          1.4832588120968655,
+          4.9175992479365,
+          0.305682770398082
+        ],
+        "yaw_rad": -1.5276566769976307
+      },
+      "telemetry": {
+        "min_upright": 0.9987228900017557,
+        "max_height_m": 0.3268335747411128,
+        "samples": 40
+      }
+    },
+    {
+      "label": "D区 / 对齐楼梯",
+      "command": {
+        "rotate_deg": -92.17734424129729
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 2.871802726999931,
+        "position": [
+          1.3964328926969245,
+          4.923088857357646,
+          0.29928172671174463
+        ],
+        "yaw_rad": -3.1161129324186727
+      },
+      "telemetry": {
+        "min_upright": 0.9975754752652972,
+        "max_height_m": 0.32245644227504294,
+        "samples": 19
+      }
+    },
+    {
+      "label": "D区 / 上楼梯到平台",
+      "command": {
+        "forward_m": 2.35,
+        "linear_x": 0.25
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 11.488191726999958,
+        "position": [
+          -0.9164640727080481,
+          4.878491260648974,
+          0.45809249248311523
+        ],
+        "yaw_rad": -3.126879037522357
+      },
+      "telemetry": {
+        "min_upright": 0.9881540407361241,
+        "max_height_m": 0.46093095199467743,
+        "samples": 75
+      }
+    },
+    {
+      "label": "D区 / 越过平台并下楼梯",
+      "command": {
+        "forward_m": 2.35,
+        "linear_x": 0.25
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 14.555606321999903,
+        "position": [
+          -3.242913288222244,
+          4.897157124007146,
+          0.31012841780511663
+        ],
+        "yaw_rad": 3.13751434604894
+      },
+      "telemetry": {
+        "min_upright": 0.9956305436573549,
+        "max_height_m": 0.4686702104828616,
+        "samples": 95
+      }
+    },
+    {
+      "label": "前往F区通道 / 对齐",
+      "command": {
+        "rotate_deg": -80.78587224516843
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 2.5241502440001113,
+        "position": [
+          -3.2193181563792375,
+          4.962729801704399,
+          0.2954807286932445
+        ],
+        "yaw_rad": 1.7633743658323757
+      },
+      "telemetry": {
+        "min_upright": 0.9980645517940326,
+        "max_height_m": 0.3225713350438016,
+        "samples": 17
+      }
+    },
+    {
+      "label": "前往F区通道 / 行走",
+      "command": {
+        "forward_m": 2.130008373094423,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 6.221488279000141,
+        "position": [
+          -3.718742101640404,
+          6.997672794221532,
+          0.30452901304537194
+        ],
+        "yaw_rad": 1.7549764008425754
+      },
+      "telemetry": {
+        "min_upright": 0.998603656090877,
+        "max_height_m": 0.3272802586308888,
+        "samples": 41
+      }
+    },
+    {
+      "label": "F区 / 坡道中心线入口 / 对齐",
+      "command": {
+        "rotate_deg": 80.38194211461625
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 2.4476455809999607,
+        "position": [
+          -3.853445933393683,
+          6.986471518110817,
+          0.29974612531494776
+        ],
+        "yaw_rad": 3.114355105421807
+      },
+      "telemetry": {
+        "min_upright": 0.9976122342907506,
+        "max_height_m": 0.31985715828533196,
+        "samples": 16
+      }
+    },
+    {
+      "label": "F区 / 坡道中心线入口 / 行走",
+      "command": {
+        "forward_m": 1.2806669060595317,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 4.29021845200009,
+        "position": [
+          -5.097157845390428,
+          7.030497752525479,
+          0.30947261698642264
+        ],
+        "yaw_rad": 3.1310008622429932
+      },
+      "telemetry": {
+        "min_upright": 0.9986716956457644,
+        "max_height_m": 0.3217695367069514,
+        "samples": 28
+      }
+    },
+    {
+      "label": "F区 / 对齐坡道",
+      "command": {
+        "rotate_deg": 90.59714077060765
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 2.78221924200011,
+        "position": [
+          -5.116187015457025,
+          6.909959015601426,
+          0.296752230546856
+        ],
+        "yaw_rad": -1.594992488993433
+      },
+      "telemetry": {
+        "min_upright": 0.9973064736077002,
+        "max_height_m": 0.32451393647787785,
+        "samples": 19
+      }
+    },
+    {
+      "label": "F区 / 上坡-越顶-下坡",
+      "command": {
+        "forward_m": 3.5,
+        "linear_x": 0.25
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 18.423603601999957,
+        "position": [
+          -5.139183940878372,
+          3.442586006778965,
+          0.30842450705309354
+        ],
+        "yaw_rad": -1.5900692403736458
+      },
+      "telemetry": {
+        "min_upright": 0.9909160471028071,
+        "max_height_m": 0.4406555025849841,
+        "samples": 120
+      }
+    },
+    {
+      "label": "进入E区表演中心 / 对齐",
+      "command": {
+        "rotate_deg": 2.9069032413455305
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 0.08774267199987662,
+        "position": [
+          -5.142030043871147,
+          3.4317224704680758,
+          0.32171914843132354
+        ],
+        "yaw_rad": -1.5662860992459116
+      },
+      "telemetry": {
+        "min_upright": 0.9999289302722683,
+        "max_height_m": 0.31657525875131215,
+        "samples": 1
+      }
+    },
+    {
+      "label": "进入E区表演中心 / 行走",
+      "command": {
+        "forward_m": 3.437289940421992,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 10.082958306999899,
+        "position": [
+          -5.059733403515478,
+          0.022296888883047362,
+          0.307827064358888
+        ],
+        "yaw_rad": -1.5582867535828424
+      },
+      "telemetry": {
+        "min_upright": 0.9986065460376388,
+        "max_height_m": 0.32797992366596196,
+        "samples": 66
+      }
+    },
+    {
+      "label": "E区 / 面向观众",
+      "command": {
+        "rotate_deg": 90.0313049135653
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 2.526435580999987,
+        "position": [
+          -4.945791215559612,
+          0.020930106831923537,
+          0.29567151408208064
+        ],
+        "yaw_rad": -0.03236622820731109
+      },
+      "telemetry": {
+        "min_upright": 0.9969173470624392,
+        "max_height_m": 0.327682020779505,
+        "samples": 17
+      }
+    },
+    {
+      "label": "E区中心 / 深蹲起立",
+      "action": "crouch",
+      "result": {
+        "id": "e4297ac2976544e8b83c5caa4cdd5bc4",
+        "name": "crouch",
+        "status": "done",
+        "elapsed_s": 4.0049999999963575,
+        "max_height_m": 0.3218150018161218,
+        "airborne_s": 0.0,
+        "obstacle_contacts": 0,
+        "nonfoot_ground_contacts": 0,
+        "handstand_s": 0.0,
+        "pitch_rotation_rad": -0.010799510310793204,
+        "initial_foot_x": [
+          -4.7643140299155595,
+          -4.7429805334779624,
+          -5.126817819993735,
+          -5.1499465736780365
+        ],
+        "displacement_m": [
+          0.002221162687273903,
+          -0.008319640553572795,
+          0.016177267035912435
+        ],
+        "upright": 0.9999990267501502,
+        "final_foot_x": [
+          -4.760549355994441,
+          -4.752043353126275,
+          -5.141616584998374,
+          -5.133619322678115
+        ],
+        "crossed_hurdle": false
+      }
+    },
+    {
+      "label": "E区中心 / 鞠躬",
+      "action": "bow",
+      "result": {
+        "id": "643e5c1c68d8499f8df7c4b47ae2df90",
+        "name": "bow",
+        "status": "done",
+        "elapsed_s": 4.0049999999963575,
+        "max_height_m": 0.320630136344612,
+        "airborne_s": 0.0,
+        "obstacle_contacts": 0,
+        "nonfoot_ground_contacts": 0,
+        "handstand_s": 0.0,
+        "pitch_rotation_rad": 0.01896166854276323,
+        "initial_foot_x": [
+          -4.757829404422222,
+          -4.750892631840755,
+          -5.143152587964589,
+          -5.130212294218099
+        ],
+        "displacement_m": [
+          0.0007874957157909535,
+          -0.003894157832263342,
+          0.010563029932498413
+        ],
+        "upright": 0.9998594007521029,
+        "final_foot_x": [
+          -4.758635134841703,
+          -4.746010365886715,
+          -5.160874231169288,
+          -5.148790850621133
+        ],
+        "crossed_hurdle": false
+      }
+    },
+    {
+      "label": "E区中心 / 左右摇摆",
+      "action": "sway",
+      "result": {
+        "id": "ebb000c42707426a94f831c00176e692",
+        "name": "sway",
+        "status": "done",
+        "elapsed_s": 6.0049999999945385,
+        "max_height_m": 0.3181710601630257,
+        "airborne_s": 0.0,
+        "obstacle_contacts": 0,
+        "nonfoot_ground_contacts": 0,
+        "handstand_s": 0.0,
+        "pitch_rotation_rad": 0.005564401289272411,
+        "initial_foot_x": [
+          -4.758256418525047,
+          -4.747740504046293,
+          -5.161757417745862,
+          -5.138988370433819
+        ],
+        "displacement_m": [
+          0.006592939514509233,
+          -0.0022216815125761357,
+          0.011505571674135573
+        ],
+        "upright": 0.9999815674445319,
+        "final_foot_x": [
+          -4.764764934848099,
+          -4.747075229817619,
+          -5.157699115040748,
+          -5.136686316792821
+        ],
+        "crossed_hurdle": false
+      }
+    },
+    {
+      "label": "E区中心 / 伸展",
+      "action": "stretch",
+      "result": {
+        "id": "4162cb9b2dac4972b5712258e7de2c5e",
+        "name": "stretch",
+        "status": "done",
+        "elapsed_s": 6.0049999999945385,
+        "max_height_m": 0.3214306481424241,
+        "airborne_s": 0.0,
+        "obstacle_contacts": 0,
+        "nonfoot_ground_contacts": 0,
+        "handstand_s": 0.0,
+        "pitch_rotation_rad": -0.010293558748882346,
+        "initial_foot_x": [
+          -4.763319262157565,
+          -4.747009588762959,
+          -5.158709157126274,
+          -5.128600215879115
+        ],
+        "displacement_m": [
+          -0.008282075830090996,
+          -0.0006137652937425152,
+          0.010733330392467266
+        ],
+        "upright": 0.9999470489971239,
+        "final_foot_x": [
+          -4.777875954643447,
+          -4.7564037722991355,
+          -5.15584013462868,
+          -5.133884469495989
+        ],
+        "crossed_hurdle": false
+      }
+    },
+    {
+      "label": "E区中心 / 节律舞蹈",
+      "action": "dance",
+      "result": {
+        "id": "00e5618c690e40168ac91edf35b828fd",
+        "name": "dance",
+        "status": "done",
+        "elapsed_s": 7.004999999993629,
+        "max_height_m": 0.36959407121323884,
+        "airborne_s": 0.0,
+        "obstacle_contacts": 0,
+        "nonfoot_ground_contacts": 0,
+        "handstand_s": 0.0,
+        "pitch_rotation_rad": -0.0037516647600037895,
+        "initial_foot_x": [
+          -4.774810511339852,
+          -4.752254917878458,
+          -5.157037831730915,
+          -5.12925372964204
+        ],
+        "displacement_m": [
+          -0.041557911233545575,
+          -0.008459671886320798,
+          0.01186465320524932
+        ],
+        "upright": 0.9997582953197457,
+        "final_foot_x": [
+          -4.824832323500263,
+          -4.806359493700569,
+          -5.186150440700278,
+          -5.15972252369938
+        ],
+        "crossed_hurdle": false
+      }
+    },
+    {
+      "label": "E区中心 / 后空翻",
+      "action": "backflip",
+      "result": {
+        "id": "bdab9176e62f4db68049e52ce815be58",
+        "name": "backflip",
+        "status": "done",
+        "elapsed_s": 10.0049999999909,
+        "max_height_m": 0.6776955200476549,
+        "airborne_s": 0.3650000000000002,
+        "obstacle_contacts": 0,
+        "nonfoot_ground_contacts": 0,
+        "handstand_s": 0.0,
+        "pitch_rotation_rad": -6.277708180671931,
+        "initial_foot_x": [
+          -4.814361125587999,
+          -4.775572583655117,
+          -5.189364268288563,
+          -5.156927741638214
+        ],
+        "displacement_m": [
+          -0.7010198635640386,
+          0.015495666189478351,
+          0.010057208690739228
+        ],
+        "upright": 0.9998739947939557,
+        "final_foot_x": [
+          -5.506135162016883,
+          -5.454831968596459,
+          -5.95541662177211,
+          -5.9898975653083
+        ],
+        "crossed_hurdle": false
+      }
+    },
+    {
+      "label": "E区 / 倒立行走起点 / 对齐",
+      "command": {
+        "rotate_deg": -8.14455390890745
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 0.340395314000034,
+        "position": [
+          -5.718503380761825,
+          0.03714613476051991,
+          0.29186633848688853
+        ],
+        "yaw_rad": -0.0678641971747024
+      },
+      "telemetry": {
+        "min_upright": 0.9986096840504569,
+        "max_height_m": 0.29778461146356977,
+        "samples": 3
+      }
+    },
+    {
+      "label": "E区 / 倒立行走起点 / 行走",
+      "command": {
+        "forward_m": 0.414455669892214,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 2.198180007000019,
+        "position": [
+          -5.330436064532524,
+          -0.013005988707796037,
+          0.30857237308336305
+        ],
+        "yaw_rad": -0.113746939427142
+      },
+      "telemetry": {
+        "min_upright": 0.9988638390349784,
+        "max_height_m": 0.3164915652265352,
+        "samples": 15
+      }
+    },
+    {
+      "label": "E区 / 倒立方向",
+      "command": {
+        "rotate_deg": 6.628701102151674
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 0.5117791140000918,
+        "position": [
+          -5.3054328009870035,
+          -0.0018628316047220562,
+          0.2998798839087739
+        ],
+        "yaw_rad": -0.035287285525847034
+      },
+      "telemetry": {
+        "min_upright": 0.9996494204697642,
+        "max_height_m": 0.3166553015018194,
+        "samples": 4
+      }
+    },
+    {
+      "label": "E区 / 倒立-前进-恢复四足",
+      "action": "handstand_walk",
+      "result": {
+        "id": "6fef57a149054dbc85361e42a4e48723",
+        "name": "handstand_walk",
+        "status": "done",
+        "elapsed_s": 27.004999999975468,
+        "max_height_m": 0.48046974384728164,
+        "airborne_s": 0.045,
+        "obstacle_contacts": 0,
+        "nonfoot_ground_contacts": 0,
+        "handstand_s": 16.0050000000011,
+        "pitch_rotation_rad": 0.028111630003003978,
+        "initial_foot_x": [
+          -5.093768757522828,
+          -5.0968335025285585,
+          -5.493348548112627,
+          -5.522771411374159
+        ],
+        "handstand_travel_m": 0.7098477905926983,
+        "displacement_m": [
+          0.5808930868548483,
+          -0.04330782549552124,
+          0.03422547425760325
+        ],
+        "upright": 0.9999357586634816,
+        "final_foot_x": [
+          -4.5932344278700965,
+          -4.4403996428139525,
+          -4.9978978990389,
+          -4.854154114687858
+        ],
+        "crossed_hurdle": false
+      }
+    },
+    {
+      "label": "E区 / 返回中心谢幕 / 对齐",
+      "command": {
+        "rotate_deg": -161.08570108629706
+      },
+      "result": {
+        "status": "done",
+        "mode": "angle",
+        "elapsed_s": 4.125133333999884,
+        "position": [
+          -4.8096366565584745,
+          -0.025477624936180006,
+          0.2965795666533014
+        ],
+        "yaw_rad": 3.0413413153986997
+      },
+      "telemetry": {
+        "min_upright": 0.9977901499768366,
+        "max_height_m": 0.3114268153581325,
+        "samples": 27
+      }
+    },
+    {
+      "label": "E区 / 返回中心谢幕 / 行走",
+      "command": {
+        "forward_m": 0.28414985803918813,
+        "linear_x": 0.4
+      },
+      "result": {
+        "status": "done",
+        "mode": "distance",
+        "elapsed_s": 1.6877265440000428,
+        "position": [
+          -5.0664855573033565,
+          -0.005887471528751558,
+          0.3097775684657083
+        ],
+        "yaw_rad": 3.0304186685023664
+      },
+      "telemetry": {
+        "min_upright": 0.999081931945254,
+        "max_height_m": 0.3213714207656428,
+        "samples": 11
+      }
+    },
+    {
+      "label": "E区 / 鞠躬谢幕",
+      "action": "bow",
+      "result": {
+        "id": "07e99c97573a474088cedacbf05f969f",
+        "name": "bow",
+        "status": "done",
+        "elapsed_s": 4.0049999999963575,
+        "max_height_m": 0.32047824694036253,
+        "airborne_s": 0.0,
+        "obstacle_contacts": 0,
+        "nonfoot_ground_contacts": 0,
+        "handstand_s": 0.0,
+        "pitch_rotation_rad": 0.02390937673811238,
+        "initial_foot_x": [
+          -5.265578321445029,
+          -5.270955487747353,
+          -4.840135490645863,
+          -4.8426427764620446
+        ],
+        "displacement_m": [
+          0.007632996383543755,
+          0.005547130330415456,
+          0.008336506799168975
+        ],
+        "upright": 0.9998691135350884,
+        "final_foot_x": [
+          -5.247652902586034,
+          -5.26804741815334,
+          -4.8433238355351484,
+          -4.86232002115922
+        ],
+        "crossed_hurdle": false
+      }
+    },
+    {
+      "label": "结束 / 稳定停止",
+      "command": {
+        "duration_sec": 3.0
+      },
+      "result": {
+        "status": "done",
+        "mode": "velocity",
+        "elapsed_s": 3.0406051639999987,
+        "position": [
+          -5.0529072200257055,
+          -0.004389142986871757,
+          0.30499842454884085
+        ],
+        "yaw_rad": -3.1134149068698456
+      },
+      "telemetry": {
+        "min_upright": 0.9995895048212743,
+        "max_height_m": 0.3064493773146157,
+        "samples": 20
+      }
+    }
+  ]
+}

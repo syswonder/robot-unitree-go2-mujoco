@@ -1,0 +1,12 @@
+[contract]
+id = "robonix/primitive/chassis/action"
+version = "1"
+kind = "primitive"
+idl = "go2_sim_action/srv/PerformAction.srv"
+description = "Execute a named torque-driven Go2 simulation action and return measured completion. Simulation only."
+
+[mode]
+type = "rpc"
+
+[semantics]
+stateless = false

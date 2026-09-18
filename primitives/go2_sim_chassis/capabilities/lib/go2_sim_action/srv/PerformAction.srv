@@ -1,0 +1,8 @@
+# Simulation only. No physical Unitree high-level calls.
+# crouch, bow, sway, stretch, dance, jump; optional backflip, handstand_walk.
+# Optional actions require pinned ONNX assets and onnxruntime; see /state.
+string name
+---
+bool success
+string status
+string detail

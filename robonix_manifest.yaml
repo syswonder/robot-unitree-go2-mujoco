@@ -4,7 +4,7 @@ catalog:
   name: robonix.robot.unitree.go2_mujoco
   version: 0.1.0
   description: Native torque-driven Go2 MuJoCo simulation with Robonix chassis and RGB-D/lidar/IMU capabilities.
-  license: Apache-2.0 AND BSD-3-Clause
+  license: Apache-2.0 AND BSD-3-Clause AND MIT
   maintainers:
     - Origamii520 <zxq13204030517@163.com>
   tags: [robot, unitree, go2, quadruped, mujoco, simulation, rgbd, lidar]
