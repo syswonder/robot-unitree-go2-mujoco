@@ -16,6 +16,15 @@ go2_sim/controller.py implements those observation/action conventions for
 named MuJoCo joints and adds a separately documented yaw feedback adapter.
 No policy weights or vendor model source bytes are changed.
 
+Optional handstand inference conventions and unmodified ONNX models are from
+Sang-SC/go2_quad2hand, bd410e4d91d3fabc1bedf1348fabe64542446e96,
+BSD-3-Clause; see third_party/quad2hand-LICENSE.txt.
+Optional backflip inference conventions and unmodified ONNX model are from
+Robot-Nav/GO2_backflip, 732ddac12eafc7191e66ca3364c5ace35a675349,
+MIT; see third_party/backflip-LICENSE.
+stunt-assets.lock.json pins downloads and SHA256 checksums. Adapters translate
+named joints and observations; they do not change the robot model parameters.
+
 Robonix and its Python API are separately installed dependencies, not vendored
 here. Consult their upstream licenses. This package is a community integration,
 not a claim of Unitree endorsement or proprietary Sport-controller equivalence.

@@ -10,9 +10,9 @@ import urllib.request
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def prepare(source=None):
+def prepare(source=None, lock_name="assets.lock.json"):
     """SHA256-check model files and Git-blob-check the pinned policy assets."""
-    lock = json.loads((ROOT / "assets.lock.json").read_text())
+    lock = json.loads((ROOT / lock_name).read_text())
     target = ROOT / ".runtime/assets"
     for entry in lock["files"]:
         dest = target / entry["destination"]
@@ -42,4 +42,6 @@ def prepare(source=None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model-source", type=Path)
-    print(prepare(parser.parse_args().model_source))
+    parser.add_argument("--stunts", action="store_true", help="Prepare optional pinned ONNX stunt policies only")
+    args = parser.parse_args()
+    print(prepare(args.model_source, "stunt-assets.lock.json" if args.stunts else "assets.lock.json"))

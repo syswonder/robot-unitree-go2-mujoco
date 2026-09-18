@@ -7,9 +7,11 @@ from pathlib import Path
 import sys
 import threading
 import time
+import uuid
 
 from robonix_api import Primitive, Ok, Err
 from .bridge import request
+from .motion import distance_velocity
 
 KIND = sys.argv[1]
 provider = Primitive(id=f"go2_sim_{KIND}", namespace=f"robonix/primitive/{KIND}",
@@ -65,6 +67,46 @@ def stop():
 if KIND == "chassis":
     import chassis_pb2
     import std_msgs_pb2
+    import go2_sim_action_pb2
+
+    @provider.grpc("robonix/primitive/chassis/action")
+    def perform_action(req):
+        result = {"status":"busy"}
+        if not move_lock.acquire(blocking=False):
+            return go2_sim_action_pb2.PerformAction_Response(success=False,status="busy",detail="Chassis is executing another call")
+        acquired=False
+        try:
+            initial=request('/state')
+            if req.name not in initial.get('available_actions',[]):
+                raise ValueError('Action not supported by this simulator: '+req.name)
+            token=uuid.uuid4().hex
+            epoch=initial['epoch']
+            start=time.monotonic()
+            while time.monotonic()-start<50.:
+                if cancelled.is_set():
+                    result={'status':'cancelled'}
+                    break
+                state=request('/state')
+                if not state['ready'] or state['epoch']!=epoch:
+                    raise RuntimeError('Simulator reset or unavailable')
+                action=state.get('action',{})
+                if action.get('id')==token and action.get('status')!='running':
+                    result=action
+                    break
+                request('/command',{'owner':'primitive','action':req.name,'action_id':token})
+                acquired=True
+                cancelled.wait(.06)
+            else:
+                result={'status':'timeout'}
+        except Exception as error:
+            result={'status':'error','error':str(error)}
+        finally:
+            if acquired:
+                try: request('/command',{'stop':True})
+                except Exception: pass
+            move_lock.release()
+        return go2_sim_action_pb2.PerformAction_Response(success=result['status']=='done',
+            status=result['status'], detail=json.dumps(result,allow_nan=False))
 
     def response(value):
         return chassis_pb2.ExecuteMoveCommand_Response(
@@ -111,12 +153,12 @@ if KIND == "chassis":
                     if abs(error) < .04:
                         break
                     # Avoid the policy's near-zero velocity standing deadband.
-                    velocity = [math.copysign(max(.12, min(.3, abs(error))), error), 0., 0.]
+                    velocity = [distance_velocity(error, cmd.linear_x), 0., 0.]
                 elif mode == "angle":
                     error = math.radians(cmd.rotate_deg)-turned
                     if abs(error) < .04:
                         break
-                    velocity = [0., 0., max(-.5, min(.5, error))]
+                    velocity = [0., 0., math.copysign(max(.18,min(.8,1.6*abs(error))),error)]
                 request("/command", {"owner": "primitive", "velocity": velocity})
                 acquired = True
                 cancelled.wait(.08)

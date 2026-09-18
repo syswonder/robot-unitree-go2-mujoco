@@ -1,0 +1,9 @@
+{
+  "files": [
+    {"repository":"Sang-SC/go2_quad2hand","commit":"bd410e4d91d3fabc1bedf1348fabe64542446e96","path":"go2_deploy/pre_train/go2_actor.onnx","destination":"quad2hand/go2_actor.onnx","sha256":"a517731107d65d34fbe73f5e72f5f4c9b8d9e6e3fb12b345e02a63d88973a6b3"},
+    {"repository":"Sang-SC/go2_quad2hand","commit":"bd410e4d91d3fabc1bedf1348fabe64542446e96","path":"go2_deploy/pre_train/go2_estimator.onnx","destination":"quad2hand/go2_estimator.onnx","sha256":"05330692a0f4ddd324286ef02890b1a9d3ee583a25c02477ca00e201a89ef1db"},
+    {"repository":"Sang-SC/go2_quad2hand","commit":"bd410e4d91d3fabc1bedf1348fabe64542446e96","path":"LICENSE.txt","destination":"quad2hand/LICENSE.txt","sha256":"55ed5ad0d6c538ddd7a9801e8df9ee2e4acaab41b4cdd4cfa0024f473d763b5a"},
+    {"repository":"Robot-Nav/GO2_backflip","commit":"732ddac12eafc7191e66ca3364c5ace35a675349","path":"model_6000_actor.onnx","destination":"backflip/policy.onnx","sha256":"01ed2b209cea10ad002aed462407cf864602326d52811a3ddd82da784cca1f32"},
+    {"repository":"Robot-Nav/GO2_backflip","commit":"732ddac12eafc7191e66ca3364c5ace35a675349","path":"LICENSE","destination":"backflip/LICENSE","sha256":"7184dd5ce2bd522313b3b17d637935aec0a710394a35311e599e9812db9f10ba"}
+  ]
+}
